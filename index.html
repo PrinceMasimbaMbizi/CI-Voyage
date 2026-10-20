@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -1192,173 +1192,182 @@
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark">↗</div>
-        <div>CI VOYAGE<small>LA MOBILITÉ SANS FRONTIÈRES</small></div>
+        <div>CI VOYAGE<small>MOBILITY WITHOUT BORDERS</small></div>
       </div>
       <div class="top-actions">
-        <select class="language" id="language" aria-label="Langue" onchange="changeLanguage()">
-          <option value="fr">🇫🇷 Français</option>
-          <option value="en">🇬🇧 English</option>
-          <option value="sw">🇹🇿 Kiswahili</option>
-          <option value="ha">🇳🇬 Hausa</option>
-          <option value="yo">🇳🇬 Yorùbá</option>
-          <option value="am">🇪🇹 አማርኛ</option>
-          <option value="pt">🇦🇴 Português</option>
+        <select class="language" id="language" aria-label="Language" onchange="changeLanguage()">
+          <option value="en" selected>🇿🇦 English</option>
+          <option value="af">🇿🇦 Afrikaans</option>
+          <option value="zu">🇿🇦 isiZulu</option>
+          <option value="xh">🇿🇦 isiXhosa</option>
+          <option value="st">🇿🇦 Sesotho</option>
+          <option value="tn">🇿🇦 Setswana</option>
+          <option value="nso">🇿🇦 Sepedi</option>
+          <option value="ts">🇿🇦 Xitsonga</option>
+          <option value="ve">🇿🇦 Tshivenda</option>
+          <option value="ss">🇿🇦 siSwati</option>
+          <option value="nr">🇿🇦 isiNdebele</option>
+          <option value="sn">🇿🇼 Shona</option>
         </select>
         <div class="avatar">A</div>
       </div>
     </header>
     <div class="layout">
       <aside class="sidebar">
-        <div class="nav-label" data-i18n="passenger">VOYAGEUR</div>
+        <div class="nav-label" data-i18n="passenger">PASSENGER</div>
         <button class="nav active" data-page="home" onclick="go('home',this)"><span class="ico">⌂</span><span
             data-i18n="home">Accueil</span></button>
         <button class="nav" data-page="book" onclick="go('book',this)"><span class="ico">⌕</span><span
             data-i18n="book">Réserver un trajet</span></button>
         <button class="nav" data-page="tickets" onclick="go('tickets',this)"><span class="ico">▣</span><span
-            data-i18n="tickets">Mes billets</span></button>
+            data-i18n="tickets">My tickets</span></button>
         <button class="nav" data-page="parcels" onclick="go('parcels',this)"><span class="ico">▤</span><span
-            data-i18n="parcels">Colis & bagages</span></button>
+            data-i18n="parcels">Parcels & bagages</span></button>
         <button class="nav" data-page="deals" onclick="go('deals',this)"><span class="ico">✦</span><span
             data-i18n="deals">Offres sur la route</span></button>
         <div class="nav-label" style="margin-top:24px" data-i18n="ecosystem">ÉCOSYSTÈME</div>
         <button class="nav" data-page="company" onclick="go('company',this)"><span class="ico">▦</span><span
-            data-i18n="company">Espace transporteur</span></button>
+            data-i18n="company">Bus operator portal</span></button>
         <button class="nav" data-page="partner" onclick="go('partner',this)"><span class="ico">♧</span><span
             data-i18n="partner">Espace partenaire</span></button>
         <button class="nav" data-page="help" onclick="go('help',this)"><span class="ico">◉</span><span
-            data-i18n="help">Aide & accessibilité</span></button>
-        <div class="side-card"><strong>Votre prochain voyage ?</strong>
-          <p>Réservez en quelques étapes et gardez votre billet disponible hors connexion.</p><button
-            onclick="go('book')">Trouver un trajet →</button>
+            data-i18n="help">Help & accessibility</span></button>
+        <div class="side-card"><strong>Your next journey?</strong>
+          <p>Book in a few steps and keep your ticket available offline.</p><button onclick="go('book')">Find a trip
+            →</button>
         </div>
       </aside>
       <main class="main">
         <section class="page active" id="page-home">
           <div class="welcome">
             <div>
-              <div class="eyebrow" data-i18n="welcome">BONJOUR, AMINA 👋</div>
-              <h1 data-i18n="headline">Le voyage vous rapproche.</h1>
-              <p data-i18n="subheadline">Voyagez, envoyez et découvrez l’Afrique autrement.</p>
+              <div class="eyebrow" data-i18n="welcome">HELLO, AMINA 👋</div>
+              <h1 data-i18n="headline">Every journey brings us closer.</h1>
+              <p data-i18n="subheadline">Travel, send parcels and discover Africa differently.</p>
             </div>
-            <div class="pill">● <span data-i18n="network">Réseau de démonstration</span></div>
+            <div class="pill">● <span data-i18n="network">Demo network</span></div>
           </div>
           <div class="hero">
-            <h2 data-i18n="heroTitle">Une Afrique. Des milliers de destinations.</h2>
-            <p data-i18n="heroText">Comparez les trajets, choisissez votre siège et payez avec votre moyen préféré.
-              Votre voyage, dans votre poche.</p>
+            <h2 data-i18n="heroTitle">One Africa. Thousands of destinations.</h2>
+            <p data-i18n="heroText">Compare routes, choose your seat and pay your way.
+              Your journey, in your pocket.</p>
             <div class="hero-buttons"><button class="btn btn-white" onclick="go('book')" data-i18n="findTrip">⌕ Trouver
-                un trajet</button><button class="btn btn-dark" onclick="go('parcels')" data-i18n="sendParcel">＋ Envoyer
+                un trajet</button><button class="btn btn-dark" onclick="go('parcels')" data-i18n="sendParcel">＋ Send
                 un colis</button></div>
           </div>
           <div class="section-head">
-            <h2 data-i18n="searchTitle">Où souhaitez-vous aller ?</h2><span data-i18n="searchCaption">Simple • sûr •
+            <h2 data-i18n="searchTitle">Where would you like to go?</h2><span data-i18n="searchCaption">Simple • sûr •
               connecté</span>
           </div>
           <div class="search-card">
             <div class="trip-toggle"><button class="active" onclick="setTripType(this)" data-i18n="oneWay">Aller
-                simple</button><button onclick="setTripType(this)" data-i18n="returnTrip">Aller-retour</button><button
-                onclick="setTripType(this)" data-i18n="multiHop">Multi-trajets</button></div>
+                simple</button><button onclick="setTripType(this)" data-i18n="returnTrip">Return</button><button
+                onclick="setTripType(this)" data-i18n="multiHop">Multi-stop</button></div>
             <div class="search-grid">
-              <div class="field"><label data-i18n="from">DÉPART</label><select id="from">
-                  <option>Abidjan</option>
-                  <option>Yamoussoukro</option>
-                  <option>Accra</option>
-                  <option>Lomé</option>
-                  <option>Cotonou</option>
-                  <option>Ouagadougou</option>
-                  <option>Dakar</option>
-                  <option>Lagos</option>
-                  <option>Nairobi</option>
-                  <option>Abuja</option>
+              <div class="field"><label data-i18n="from">FROM</label><select id="from">
+                  <option>Johannesburg</option>
+                  <option>Pretoria</option>
+                  <option>Cape Town</option>
+                  <option>Durban</option>
+                  <option>Bloemfontein</option>
+                  <option>Gqeberha</option>
+                  <option>Polokwane</option>
+                  <option>Mbombela</option>
+                  <option>East London</option>
+                  <option>Kimberley</option>
+                  <option>Harare</option>
+                  <option>Gaborone</option>
                 </select></div>
               <div class="field"><label data-i18n="to">DESTINATION</label><select id="to">
-                  <option>Yamoussoukro</option>
-                  <option>Abidjan</option>
-                  <option>Accra</option>
-                  <option>Lomé</option>
-                  <option>Cotonou</option>
-                  <option>Ouagadougou</option>
-                  <option>Dakar</option>
-                  <option>Lagos</option>
-                  <option>Nairobi</option>
-                  <option>Abuja</option>
+                  <option>Cape Town</option>
+                  <option>Johannesburg</option>
+                  <option>Pretoria</option>
+                  <option>Durban</option>
+                  <option>Bloemfontein</option>
+                  <option>Gqeberha</option>
+                  <option>Polokwane</option>
+                  <option>Mbombela</option>
+                  <option>East London</option>
+                  <option>Kimberley</option>
+                  <option>Harare</option>
+                  <option>Gaborone</option>
                 </select></div>
-              <div class="field"><label data-i18n="date">DATE DE DÉPART</label><input type="date" id="date"></div>
-              <div class="field"><label data-i18n="passengers">VOYAGEURS</label><select id="passengers">
+              <div class="field"><label data-i18n="date">DEPARTURE DATE</label><input type="date" id="date"></div>
+              <div class="field"><label data-i18n="passengers">PASSENGERS</label><select id="passengers">
                   <option>1 voyageur</option>
                   <option>2 voyageurs</option>
                   <option>3 voyageurs</option>
                   <option>4 voyageurs</option>
                   <option>5 voyageurs</option>
                 </select></div>
-              <button class="btn btn-orange search-submit" onclick="searchTrips()" data-i18n="search">Rechercher
+              <button class="btn btn-orange search-submit" onclick="searchTrips()" data-i18n="search">Search
                 ↗</button>
             </div>
           </div>
           <div class="stats">
             <div class="stat">
-              <div class="stat-top"><span data-i18n="myTickets">Mes billets</span><span class="stat-icon">▣</span></div>
-              <strong id="ticketCount">2</strong><small data-i18n="readyTravel">Prêts à voyager </small>
+              <div class="stat-top"><span data-i18n="myTickets">My tickets</span><span class="stat-icon">▣</span></div>
+              <strong id="ticketCount">2</strong><small data-i18n="readyTravel">Ready to travel </small>
             </div>
             <div class="stat">
-              <div class="stat-top"><span data-i18n="saved">Économies</span><span class="stat-icon">✦</span></div>
-              <strong>8 500 <small>FCFA</small></strong><small data-i18n="partnerSavings">Grâce aux offres
+              <div class="stat-top"><span data-i18n="saved">Savings</span><span class="stat-icon">✦</span></div>
+              <strong>R 850 <small>ZAR</small></strong><small data-i18n="partnerSavings">Grâce aux offres
                 partenaires</small>
             </div>
             <div class="stat">
-              <div class="stat-top"><span data-i18n="parcel">Colis</span><span class="stat-icon">▤</span></div>
-              <strong>1</strong><small data-i18n="inTransit">En cours d’acheminement</small>
+              <div class="stat-top"><span data-i18n="parcel">Parcels</span><span class="stat-icon">▤</span></div>
+              <strong>1</strong><small data-i18n="inTransit">In transit</small>
             </div>
           </div>
           <div class="two-col">
             <div class="panel">
               <div class="panel-title">
-                <h3 data-i18n="popularRoutes">Trajets populaires</h3><button class="text-link" onclick="go('book')"
-                  data-i18n="seeAll">Tout voir →</button>
+                <h3 data-i18n="popularRoutes">Popular routes</h3><button class="text-link" onclick="go('book')"
+                  data-i18n="seeAll">View all →</button>
               </div>
               <div class="route-card">
-                <div class="route-top"><strong>Abidjan <span style="color:#aaa">→</span> Yamoussoukro</strong><span>4
-                    500 FCFA</span></div>
-                <div class="route-sub">Aujourd’hui · 08:30 – 11:15 · 2 h 45</div>
-                <div class="route-line"><span>Abidjan</span>
-                  <div class="line"></div><span>Yamoussoukro</span>
+                <div class="route-top"><strong>Johannesburg <span style="color:#aaa">→</span> Cape Town</strong><span>R
+                    180</span></div>
+                <div class="route-sub">Today · 08:30 – 11:15 · 2 h 45</div>
+                <div class="route-line"><span>Johannesburg</span>
+                  <div class="line"></div><span>Cape Town</span>
                 </div>
-                <div class="route-bottom"><span class="seats">● <b>12 places</b> disponibles</span><button
-                    class="btn btn-light" onclick="bookRoute('Abidjan','Yamoussoukro','4 500 FCFA')">Choisir</button>
+                <div class="route-bottom"><span class="seats">● <b>12 seats</b> available</span><button
+                    class="btn btn-light" onclick="bookRoute('Johannesburg','Cape Town','R 180')">Choose</button>
                 </div>
               </div>
               <div class="route-card">
-                <div class="route-top"><strong>Abidjan <span style="color:#aaa">→</span> Accra</strong><span>12 000
-                    FCFA</span></div>
-                <div class="route-sub">Demain · 07:00 – 13:30 · 6 h 30</div>
-                <div class="route-line"><span>Abidjan</span>
-                  <div class="line"></div><span>Accra</span>
+                <div class="route-top"><strong>Johannesburg <span style="color:#aaa">→</span> Pretoria</strong><span>R
+                    220</span></div>
+                <div class="route-sub">Tomorrow · 07:00 – 13:30 · 6 h 30</div>
+                <div class="route-line"><span>Johannesburg</span>
+                  <div class="line"></div><span>Pretoria</span>
                 </div>
-                <div class="route-bottom"><span class="seats">● <b>8 places</b> disponibles</span><button
-                    class="btn btn-light" onclick="bookRoute('Abidjan','Accra','12 000 FCFA')">Choisir</button></div>
+                <div class="route-bottom"><span class="seats">● <b>8 seats</b> available</span><button
+                    class="btn btn-light" onclick="bookRoute('Johannesburg','Pretoria','R 220')">Choose</button></div>
               </div>
             </div>
             <div class="panel">
               <div class="panel-title">
-                <h3 data-i18n="routeDeals">Vos avantages sur la route</h3><button class="text-link"
-                  onclick="go('deals')" data-i18n="explore">Explorer</button>
+                <h3 data-i18n="routeDeals">Your route benefits</h3><button class="text-link" onclick="go('deals')"
+                  data-i18n="explore">Explore</button>
               </div>
               <div class="offer">
                 <div class="offer-icon">🍽️</div>
-                <div><strong>Restaurant Le Baobab</strong>
-                  <p>À 300 m de votre prochain arrêt</p><span class="discount">−15 % sur votre repas</span>
+                <div><strong>Maboneng Kitchen</strong>
+                  <p>300 m from your next stop</p><span class="discount">15% off your meal</span>
                 </div>
               </div>
               <div class="offer">
                 <div class="offer-icon">🏨</div>
-                <div><strong>Hôtel Soleil</strong>
-                  <p>Une pause confortable à Yamoussoukro</p><span class="discount">−10 % avec votre billet</span>
+                <div><strong>Cape View Guesthouse</strong>
+                  <p>A comfortable stop in Cape Town</p><span class="discount">10% off with your ticket</span>
                 </div>
               </div>
               <div class="offer">
                 <div class="offer-icon">⛽</div>
-                <div><strong>Station Énergie Plus</strong>
-                  <p>Partenaire certifié CI Voyage</p><span class="discount">Offre spéciale voyageurs</span>
+                <div><strong>Sasol Service Station</strong>
+                  <p>CI Voyage demo partner</p><span class="discount">Special traveller offer</span>
                 </div>
               </div>
             </div>
@@ -1367,141 +1376,145 @@
         <section class="page" id="page-book">
           <div class="welcome">
             <div>
-              <div class="eyebrow">RÉSERVATION</div>
-              <h1>Réservez votre trajet</h1>
-              <p>Comparez les départs et choisissez votre place.</p>
-            </div><span class="pill">Paiement mobile disponible</span>
+              <div class="eyebrow">BOOKING</div>
+              <h1>Book your trip</h1>
+              <p>Compare departures and choose your seat.</p>
+            </div><span class="pill">Online payment options available</span>
           </div>
           <div class="search-card">
             <div class="search-grid">
-              <div class="field"><label>DÉPART</label><select id="bookFrom">
-                  <option>Abidjan</option>
-                  <option>Yamoussoukro</option>
-                  <option>Accra</option>
-                  <option>Lomé</option>
-                  <option>Cotonou</option>
-                  <option>Dakar</option>
-                  <option>Lagos</option>
-                  <option>Nairobi</option>
+              <div class="field"><label>FROM</label><select id="bookFrom">
+                  <option>Johannesburg</option>
+                  <option>Pretoria</option>
+                  <option>Cape Town</option>
+                  <option>Durban</option>
+                  <option>Bloemfontein</option>
+                  <option>Gqeberha</option>
+                  <option>Polokwane</option>
+                  <option>Mbombela</option>
+                  <option>Harare</option>
+                  <option>Gaborone</option>
                 </select></div>
               <div class="field"><label>DESTINATION</label><select id="bookTo">
-                  <option>Yamoussoukro</option>
-                  <option>Abidjan</option>
-                  <option>Accra</option>
-                  <option>Lomé</option>
-                  <option>Cotonou</option>
-                  <option>Dakar</option>
-                  <option>Lagos</option>
-                  <option>Nairobi</option>
+                  <option>Cape Town</option>
+                  <option>Johannesburg</option>
+                  <option>Pretoria</option>
+                  <option>Durban</option>
+                  <option>Bloemfontein</option>
+                  <option>Gqeberha</option>
+                  <option>Polokwane</option>
+                  <option>Mbombela</option>
+                  <option>Harare</option>
+                  <option>Gaborone</option>
                 </select></div>
               <div class="field"><label>DATE</label><input type="date" id="bookDate"></div>
-              <div class="field"><label>VOYAGEURS</label><select>
+              <div class="field"><label>PASSENGERS</label><select>
                   <option>1 voyageur</option>
                   <option>2 voyageurs</option>
                   <option>3 voyageurs</option>
                 </select></div>
-              <button class="btn btn-orange search-submit" onclick="searchTrips()">Rechercher ↗</button>
+              <button class="btn btn-orange search-submit" onclick="searchTrips()">Search ↗</button>
             </div>
           </div>
           <div class="section-head">
-            <h2>Départs disponibles</h2><span id="searchResultLabel">3 options pour vous</span>
+            <h2>Available departures</h2><span id="searchResultLabel">3 options pour vous</span>
           </div>
           <div id="tripResults">
             <div class="route-card">
-              <div class="route-top"><strong>UTB — Confort Plus</strong><span>4 500 FCFA</span></div>
+              <div class="route-top"><strong>Intercape — Comfort</strong><span>R 180</span></div>
               <div class="route-sub">Départ 08:30 · Arrivée 11:15 · Climatisation · Wi-Fi</div>
-              <div class="route-line"><span>Abidjan</span>
-                <div class="line"></div><span>Yamoussoukro</span>
+              <div class="route-line"><span>Johannesburg</span>
+                <div class="line"></div><span>Cape Town</span>
               </div>
-              <div class="route-bottom"><span class="seats">12 places disponibles · <b>Note 4,8 ★</b></span><button
-                  class="btn btn-orange" onclick="startBooking('UTB — Confort Plus','4 500 FCFA')">Choisir un
+              <div class="route-bottom"><span class="seats">12 seats available · <b>Note 4,8 ★</b></span><button
+                  class="btn btn-orange" onclick="startBooking('Intercape — Comfort','R 180')">Choose a
                   siège</button></div>
             </div>
             <div class="route-card">
-              <div class="route-top"><strong>AVS Transport — Express</strong><span>5 000 FCFA</span></div>
+              <div class="route-top"><strong>Greyhound — Express</strong><span>R 220</span></div>
               <div class="route-sub">Départ 10:00 · Arrivée 12:30 · Climatisation</div>
-              <div class="route-line"><span>Abidjan</span>
-                <div class="line"></div><span>Yamoussoukro</span>
+              <div class="route-line"><span>Johannesburg</span>
+                <div class="line"></div><span>Cape Town</span>
               </div>
-              <div class="route-bottom"><span class="seats">8 places disponibles · <b>Note 4,6 ★</b></span><button
-                  class="btn btn-orange" onclick="startBooking('AVS Transport — Express','5 000 FCFA')">Choisir un
+              <div class="route-bottom"><span class="seats">8 seats available · <b>Note 4,6 ★</b></span><button
+                  class="btn btn-orange" onclick="startBooking('Greyhound — Express','R 220')">Choose a
                   siège</button></div>
             </div>
             <div class="route-card">
-              <div class="route-top"><strong>TransIvoire — Économique</strong><span>3 500 FCFA</span></div>
+              <div class="route-top"><strong>City to City — Economy</strong><span>R 150</span></div>
               <div class="route-sub">Départ 13:15 · Arrivée 16:00 · Bagage inclus</div>
-              <div class="route-line"><span>Abidjan</span>
-                <div class="line"></div><span>Yamoussoukro</span>
+              <div class="route-line"><span>Johannesburg</span>
+                <div class="line"></div><span>Cape Town</span>
               </div>
-              <div class="route-bottom"><span class="seats">15 places disponibles · <b>Note 4,4 ★</b></span><button
-                  class="btn btn-orange" onclick="startBooking('TransIvoire — Économique','3 500 FCFA')">Choisir un
+              <div class="route-bottom"><span class="seats">15 places available · <b>Note 4,4 ★</b></span><button
+                  class="btn btn-orange" onclick="startBooking('City to City — Economy','R 150')">Choose a
                   siège</button></div>
             </div>
           </div>
           <div id="seatBooking" class="panel" style="display:none;margin-top:16px">
             <div class="panel-title">
-              <h3>Choisissez votre siège</h3><span id="selectedBus">UTB</span>
+              <h3>Choose your seat</h3><span id="selectedBus">UTB</span>
             </div>
-            <p style="font-size:11px;color:#777">Avant du bus ↑ · Les sièges gris sont déjà occupés.</p>
+            <p style="font-size:11px;color:#777">Front of bus ↑ · Grey seats are already taken.</p>
             <div class="seat-map" id="seatMap"></div>
-            <div class="notice" id="seatNotice">Sélectionnez une place pour continuer.</div>
+            <div class="notice" id="seatNotice">Select a seat to continue.</div>
             <div class="form-grid">
-              <div class="field"><label>NOM DU VOYAGEUR</label><input id="travelerName" value="Amina Diallo"></div>
-              <div class="field"><label>TÉLÉPHONE</label><input id="travelerPhone" placeholder="+225 07 00 00 00 00">
+              <div class="field"><label>PASSENGER NAME</label><input id="travelerName" value="Amina Diallo"></div>
+              <div class="field"><label>PHONE</label><input id="travelerPhone" placeholder="+27 82 000 0000">
               </div>
             </div>
-            <div class="form-actions"><button class="btn btn-orange" onclick="openPayment()">Continuer vers le paiement
+            <div class="form-actions"><button class="btn btn-orange" onclick="openPayment()">Continue to payment
                 →</button><button class="btn btn-outline"
-                onclick="document.getElementById('seatBooking').style.display='none'">Annuler</button></div>
+                onclick="document.getElementById('seatBooking').style.display='none'">Cancel</button></div>
           </div>
         </section>
         <section class="page" id="page-tickets">
           <div class="welcome">
             <div>
-              <div class="eyebrow">VOS VOYAGES</div>
-              <h1>Mes billets</h1>
-              <p>Vos billets numériques, disponibles même hors connexion.</p>
-            </div><span class="pill">✓ Billets vérifiables</span>
+              <div class="eyebrow">YOUR JOURNEYS</div>
+              <h1>My tickets</h1>
+              <p>Your digital tickets, available even offline.</p>
+            </div><span class="pill">✓ Verifiable tickets</span>
           </div>
-          <div class="tabs"><button class="active">À venir</button><button
-              onclick="toast('Historique de démonstration affiché.')">Historique</button><button
-              onclick="toast('Mode hors connexion simulé : les billets enregistrés restent visibles.')">Mode hors
+          <div class="tabs"><button class="active">Upcoming</button><button
+              onclick="toast('Demo history displayed.')">History</button><button
+              onclick="toast('Offline mode simulé : les billets enregistrés restent visibles.')">Mode hors
               connexion ◉</button></div>
           <div id="ticketList">
             <div class="ticket" style="margin-bottom:14px">
               <div class="ticket-head">
-                <div><strong>CI VOYAGE <span style="color:var(--orange)">/ Billet électronique</span></strong>
-                  <p style="margin:5px 0 0;font-size:10px;color:#888">Référence : CIV-2048-019</p>
+                <div><strong>CI VOYAGE <span style="color:var(--orange)">/ E-ticket</span></strong>
+                  <p style="margin:5px 0 0;font-size:10px;color:#888">Reference: CIV-2048-019</p>
                 </div>
-                <div class="qr" aria-label="QR code de démonstration"></div>
+                <div class="qr" aria-label="Demo QR code"></div>
               </div>
               <div class="ticket-route">
-                <div><small>DÉPART · 08:30</small><strong>ABJ</strong>
-                  <div style="font-size:10px;color:#777">Abidjan</div>
+                <div><small>DEPARTURE · 08:30</small><strong>ABJ</strong>
+                  <div style="font-size:10px;color:#777">Johannesburg</div>
                 </div><span style="color:var(--orange)">━━━━ ✈ ━━━━</span>
-                <div style="text-align:right"><small>ARRIVÉE · 11:15</small><strong>YAK</strong>
-                  <div style="font-size:10px;color:#777">Yamoussoukro</div>
+                <div style="text-align:right"><small>ARRIVAL · 11:15</small><strong>YAK</strong>
+                  <div style="font-size:10px;color:#777">Cape Town</div>
                 </div>
               </div>
               <div class="ticket-info">
-                <div><span>VOYAGEUR</span><b>Amina Diallo</b></div>
-                <div><span>SIÈGE</span><b>08A · Fenêtre</b></div>
+                <div><span>PASSENGER</span><b>Amina Diallo</b></div>
+                <div><span>SEAT</span><b>08A · Fenêtre</b></div>
                 <div><span>DATE</span><b>24 oct. 2026</b></div>
-                <div><span>TRANSPORTEUR</span><b>UTB</b></div>
-                <div><span>PRIX</span><b>4 500 FCFA</b></div>
-                <div><span>STATUT</span><b class="badge">Payé</b></div>
+                <div><span>OPERATOR</span><b>UTB</b></div>
+                <div><span>PRICE</span><b>R 180</b></div>
+                <div><span>STATUS</span><b class="badge">Paid</b></div>
               </div>
               <div class="form-actions"><button class="btn btn-orange"
-                  onclick="toast('Billet de démonstration enregistré sur cet appareil.')">↓ Enregistrer hors
+                  onclick="toast('Demo ticket saved on this device.')">↓ Save offline
                   ligne</button><button class="btn btn-outline"
                   onclick="toast('Lien de voyage prêt à partager avec votre famille.')">↗ Partager le
                   trajet</button><button class="btn btn-outline"
-                  onclick="toast('QR de démonstration : CIV-2048-019 — validation simulée.')">Vérifier le
+                  onclick="toast('Demo QR: CIV-2048-019 — validation simulated.')">Validate the
                   billet</button></div>
             </div>
             <div class="panel">
               <div class="panel-title">
-                <h3>Suivi en direct</h3><span class="badge orange">Simulation GPS</span>
+                <h3>Live tracking</h3><span class="badge orange">GPS demo</span>
               </div>
               <div
                 style="height:110px;border-radius:12px;background:linear-gradient(135deg,#f3f5ee,#e8eee2);display:grid;place-items:center;text-align:center;color:#3f6049">
@@ -1510,8 +1523,8 @@
                   Tiassalé</div>
               </div>
               <div class="route-bottom" style="margin-top:13px"><span class="seats">Dernière position reçue : il y a 2
-                  min</span><button class="btn btn-light"
-                  onclick="toast('Alerte de sécurité activée pour cette démonstration.')">Activer les alertes</button>
+                  min</span><button class="btn btn-light" onclick="toast('Safety alert enabled for this demo.')">Enable
+                  alerts</button>
               </div>
             </div>
           </div>
@@ -1519,14 +1532,14 @@
         <section class="page" id="page-parcels">
           <div class="welcome">
             <div>
-              <div class="eyebrow">COLIS & BAGAGES</div>
-              <h1>Envoyez plus loin.</h1>
-              <p>Un réseau de livraison qui utilise les trajets de bus existants.</p>
+              <div class="eyebrow">PARCELS & LUGGAGE</div>
+              <h1>Send it further.</h1>
+              <p>A delivery network that uses existing bus routes.</p>
             </div><span class="pill">Suivi par SMS</span>
           </div>
           <div class="hero">
-            <h2>Votre colis voyage avec confiance.</h2>
-            <p>Réservez un envoi, remettez votre colis au point partenaire et suivez son parcours jusqu’à la réception.
+            <h2>Your parcel travels with confidence.</h2>
+            <p>Book a delivery, drop your parcel at a partner point, and track it until collection.
             </p><button class="btn btn-white"
               onclick="document.getElementById('parcelForm').scrollIntoView({behavior:'smooth'})">＋ Créer un
               envoi</button>
@@ -1534,76 +1547,82 @@
           <div class="mini-cards">
             <div class="mini-card"><span style="font-size:20px">📦</span>
               <div class="big">CIV-7821</div>
-              <p>Colis en transit</p>
+              <p>Parcel in transit</p>
             </div>
             <div class="mini-card"><span style="font-size:20px">🚌</span>
               <div class="big">ABJ → YAK</div>
-              <p>Trajet actuel</p>
+              <p>Current route</p>
             </div>
             <div class="mini-card"><span style="font-size:20px">✓</span>
-              <div class="big">Sécurisé</div>
-              <p>Code de remise requis</p>
+              <div class="big">Secure</div>
+              <p>Collection code required</p>
             </div>
           </div>
           <div class="section-head">
-            <h2>Créer un envoi</h2><span>Formulaire de démonstration</span>
+            <h2>Create a delivery</h2><span>Demo form</span>
           </div>
           <div class="form-card" id="parcelForm">
             <div class="form-grid">
-              <div class="field"><label>VILLE DE DÉPART</label><select id="parcelFrom">
-                  <option>Abidjan</option>
-                  <option>Yamoussoukro</option>
-                  <option>Accra</option>
-                  <option>Lomé</option>
-                  <option>Cotonou</option>
+              <div class="field"><label>ORIGIN CITY</label><select id="parcelFrom">
+                  <option>Johannesburg</option>
+                  <option>Pretoria</option>
+                  <option>Cape Town</option>
+                  <option>Durban</option>
+                  <option>Bloemfontein</option>
+                  <option>Gqeberha</option>
+                  <option>Harare</option>
+                  <option>Gaborone</option>
                 </select></div>
-              <div class="field"><label>VILLE DE DESTINATION</label><select id="parcelTo">
-                  <option>Yamoussoukro</option>
-                  <option>Abidjan</option>
-                  <option>Accra</option>
-                  <option>Lomé</option>
-                  <option>Cotonou</option>
+              <div class="field"><label>DESTINATION CITY</label><select id="parcelTo">
+                  <option>Cape Town</option>
+                  <option>Johannesburg</option>
+                  <option>Pretoria</option>
+                  <option>Durban</option>
+                  <option>Bloemfontein</option>
+                  <option>Gqeberha</option>
+                  <option>Harare</option>
+                  <option>Gaborone</option>
                 </select></div>
-              <div class="field"><label>NOM DU DESTINATAIRE</label><input id="recipient" placeholder="Nom complet">
+              <div class="field"><label>RECIPIENT NAME</label><input id="recipient" placeholder="Nom complet">
               </div>
-              <div class="field"><label>TÉLÉPHONE DU DESTINATAIRE</label><input id="recipientPhone"
-                  placeholder="+225 …"></div>
-              <div class="field"><label>TYPE DE COLIS</label><select id="parcelType">
+              <div class="field"><label>RECIPIENT PHONE</label><input id="recipientPhone" placeholder="+27 82 000 0000">
+              </div>
+              <div class="field"><label>PARCEL TYPE</label><select id="parcelType">
                   <option>Petit colis</option>
                   <option>Document</option>
                   <option>Bagage</option>
-                  <option>Colis volumineux</option>
+                  <option>Parcels volumineux</option>
                 </select></div>
-              <div class="field"><label>VALEUR DÉCLARÉE (FCFA)</label><input id="parcelValue" type="number"
+              <div class="field"><label>DECLARED VALUE (ZAR)</label><input id="parcelValue" type="number"
                   placeholder="Ex. 10000"></div>
             </div>
-            <div class="form-actions"><button class="btn btn-orange" onclick="createParcel()">Calculer et réserver
+            <div class="form-actions"><button class="btn btn-orange" onclick="createParcel()">Calculate and book
                 l’envoi →</button></div>
           </div>
           <div class="section-head">
-            <h2>Suivre un colis</h2>
+            <h2>Track a parcel</h2>
           </div>
           <div class="form-card">
             <div class="form-grid">
-              <div class="field"><label>NUMÉRO DE SUIVI</label><input id="trackingId" value="CIV-7821"></div>
-              <div class="field"><label>TÉLÉPHONE ASSOCIÉ</label><input placeholder="+225 …"></div>
+              <div class="field"><label>TRACKING NUMBER</label><input id="trackingId" value="CIV-7821"></div>
+              <div class="field"><label>PHONE NUMBER</label><input placeholder="+27 82 000 0000"></div>
             </div>
-            <div class="form-actions"><button class="btn btn-dark" onclick="trackParcel()">Suivre mon colis</button>
+            <div class="form-actions"><button class="btn btn-dark" onclick="trackParcel()">Track my parcel</button>
             </div>
-            <div id="trackingResult" class="notice">CIV-7821 · Colis pris en charge → En transit vers Yamoussoukro →
+            <div id="trackingResult" class="notice">CIV-7821 · Parcels pris en charge → En transit vers Cape Town →
               Livraison prévue aujourd’hui. (Données simulées)</div>
           </div>
         </section>
         <section class="page" id="page-deals">
           <div class="welcome">
             <div>
-              <div class="eyebrow">AVANTAGES VOYAGEURS</div>
+              <div class="eyebrow">AVANTAGES PASSENGERS</div>
               <h1>La route vous récompense.</h1>
               <p>Des offres locales utiles, accessibles avec votre billet CI Voyage.</p>
             </div><span class="pill">Partenaires vérifiés</span>
           </div>
           <div class="search-card">
-            <div class="field"><label>FILTRER PAR CATÉGORIE</label><select id="dealFilter" onchange="filterDeals()">
+            <div class="field"><label>FILTRER PAR CATEGORY</label><select id="dealFilter" onchange="filterDeals()">
                 <option value="all">Toutes les offres</option>
                 <option value="restaurant">Restaurants</option>
                 <option value="hotel">Hôtels</option>
@@ -1615,112 +1634,111 @@
             <div class="panel deal-item" data-category="restaurant">
               <div class="offer">
                 <div class="offer-icon">🍲</div>
-                <div><strong>Restaurant Le Baobab</strong>
-                  <p>Yamoussoukro · À 300 m de la gare</p><span class="discount">−15 % sur votre repas</span>
-                  <p style="margin-top:8px">Présentez le QR de votre billet au comptoir.</p><button
-                    class="btn btn-light" onclick="redeem('Restaurant Le Baobab')">Voir l’offre</button>
+                <div><strong>Maboneng Kitchen</strong>
+                  <p>Cape Town · 300 m from the station</p><span class="discount">15% off your meal</span>
+                  <p style="margin-top:8px">Show your ticket QR at the counter.</p><button class="btn btn-light"
+                    onclick="redeem('Maboneng Kitchen')">View offer</button>
                 </div>
               </div>
             </div>
             <div class="panel deal-item" data-category="hotel">
               <div class="offer">
                 <div class="offer-icon">🛏️</div>
-                <div><strong>Hôtel Soleil</strong>
-                  <p>Yamoussoukro · Hébergement</p><span class="discount">−10 % sur une nuitée</span>
+                <div><strong>Cape View Guesthouse</strong>
+                  <p>Cape Town · Accommodation</p><span class="discount">10% off one night</span>
                   <p style="margin-top:8px">Offre valable sur présentation du billet.</p><button class="btn btn-light"
-                    onclick="redeem('Hôtel Soleil')">Voir l’offre</button>
+                    onclick="redeem('Cape View Guesthouse')">View offer</button>
                 </div>
               </div>
             </div>
             <div class="panel deal-item" data-category="clinic">
               <div class="offer">
                 <div class="offer-icon">🏥</div>
-                <div><strong>Clinique Espoir</strong>
-                  <p>Abidjan · Santé & bien-être</p><span class="discount">Consultation à tarif partenaire</span>
-                  <p style="margin-top:8px">Contactez le partenaire pour les conditions.</p><button
-                    class="btn btn-light" onclick="redeem('Clinique Espoir')">Voir l’offre</button>
+                <div><strong>HealthFirst Clinic</strong>
+                  <p>Johannesburg · Health & wellness</p><span class="discount">Partner-rate consultation</span>
+                  <p style="margin-top:8px">Contact the partner for terms.</p><button class="btn btn-light"
+                    onclick="redeem('HealthFirst Clinic')">View offer</button>
                 </div>
               </div>
             </div>
             <div class="panel deal-item" data-category="fuel">
               <div class="offer">
                 <div class="offer-icon">⛽</div>
-                <div><strong>Énergie Plus</strong>
-                  <p>Corridor Abidjan–Yamoussoukro</p><span class="discount">Avantage carburant partenaire</span>
-                  <p style="margin-top:8px">Localisez les stations sur votre itinéraire.</p><button
-                    class="btn btn-light" onclick="redeem('Énergie Plus')">Voir l’offre</button>
+                <div><strong>Sasol Fuel Stop</strong>
+                  <p>Corridor Johannesburg–Cape Town</p><span class="discount">Partner fuel benefit</span>
+                  <p style="margin-top:8px">Find fuel stations along your route.</p><button class="btn btn-light"
+                    onclick="redeem('Sasol Fuel Stop')">View offer</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="notice">Prototype : la validation réelle des remises par QR, les coordonnées GPS et les offres
-            contractuelles seront reliées aux comptes partenaires dans la version de production.</div>
+          <div class="notice">Prototype: live QR discount validation, GPS coordinates and contracted offers will be
+            connected to partner accounts in the production version.</div>
         </section>
         <section class="page" id="page-company">
           <div class="welcome">
             <div>
-              <div class="eyebrow">PORTAIL B2B</div>
-              <h1>Espace transporteur</h1>
-              <p>Gérez vos véhicules, chauffeurs, trajets et revenus depuis un seul endroit.</p>
-            </div><span class="pill">Mode démonstration</span>
+              <div class="eyebrow">BUSINESS PORTAL</div>
+              <h1>Bus operator portal</h1>
+              <p>Manage your vehicles, drivers, routes and revenue in one place.</p>
+            </div><span class="pill">Demo mode</span>
           </div>
           <div class="stats">
             <div class="stat">
-              <div class="stat-top">Bus actifs <span class="stat-icon">🚌</span></div><strong>24 /
-                35</strong><small>Plan Silver simulé</small>
+              <div class="stat-top">Active buses <span class="stat-icon">🚌</span></div><strong>24 /
+                35</strong><small>Silver plan demo</small>
             </div>
             <div class="stat">
-              <div class="stat-top">Billets vendus <span class="stat-icon">▣</span></div><strong>1 284</strong><small>Ce
-                mois-ci</small>
+              <div class="stat-top">Tickets sold <span class="stat-icon">▣</span></div><strong>1 284</strong><small>This
+                month</small>
             </div>
             <div class="stat">
-              <div class="stat-top">Revenu estimé <span class="stat-icon">↗</span></div><strong>8,4
-                M</strong><small>FCFA · Démonstration</small>
+              <div class="stat-top">Estimated revenue <span class="stat-icon">↗</span></div><strong>8,4
+                M</strong><small>ZAR · Demo</small>
             </div>
           </div>
           <div class="panel">
             <div class="panel-title">
-              <h3>Gestion de la flotte</h3><button class="btn btn-orange"
-                onclick="toast('Formulaire d’ajout de bus ouvert en version de démonstration.')">＋ Ajouter un
+              <h3>Fleet management</h3><button class="btn btn-orange"
+                onclick="toast('Add-bus form opened in demo mode.')">＋ Add a
                 bus</button>
             </div>
-            <div class="tabs"><button class="active">Véhicules</button><button
-                onclick="toast('Module Chauffeurs : exemple de données de démonstration.')">Chauffeurs</button><button
-                onclick="toast('Module Itinéraires : exemple de données de démonstration.')">Itinéraires &
-                tarifs</button><button
-                onclick="toast('Module Partenaires : exemple de données de démonstration.')">Offres partenaires</button>
+            <div class="tabs"><button class="active">Vehicles</button><button
+                onclick="toast('Drivers module: sample demo data.')">Drivers</button><button
+                onclick="toast('Routes module: sample demo data.')">Routes &
+                tarifs</button><button onclick="toast('Partners module: sample demo data.')">Partner offers</button>
             </div>
             <div class="table-wrap">
               <table class="data-table">
                 <thead>
                   <tr>
-                    <th>VÉHICULE</th>
-                    <th>ITINÉRAIRE</th>
-                    <th>CHAUFFEUR</th>
-                    <th>STATUT GPS</th>
-                    <th>ÉTAT</th>
+                    <th>VEHICLE</th>
+                    <th>ROUTE</th>
+                    <th>DRIVER</th>
+                    <th>GPS STATUS</th>
+                    <th>STATUS</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>CI-045-AB</td>
-                    <td>Abidjan → Yamoussoukro</td>
-                    <td>K. Traoré</td>
-                    <td><span class="badge">En direct</span></td>
-                    <td><span class="badge">Actif</span></td>
+                    <td>ZA-045-GP</td>
+                    <td>Johannesburg → Cape Town</td>
+                    <td>K. Mokoena</td>
+                    <td><span class="badge">Live</span></td>
+                    <td><span class="badge">Active</span></td>
                   </tr>
                   <tr>
-                    <td>CI-118-CD</td>
-                    <td>Abidjan → Accra</td>
-                    <td>M. Koné</td>
-                    <td><span class="badge orange">Signal faible</span></td>
-                    <td><span class="badge">Actif</span></td>
+                    <td>ZA-118-WC</td>
+                    <td>Johannesburg → Pretoria</td>
+                    <td>M. Dlamini</td>
+                    <td><span class="badge orange">Weak signal</span></td>
+                    <td><span class="badge">Active</span></td>
                   </tr>
                   <tr>
-                    <td>CI-209-EF</td>
-                    <td>Abidjan → Bouaké</td>
-                    <td>A. Yao</td>
-                    <td><span class="badge">En direct</span></td>
+                    <td>ZA-209-KZN</td>
+                    <td>Durban → Gqeberha</td>
+                    <td>A. Ndlovu</td>
+                    <td><span class="badge">Live</span></td>
                     <td><span class="badge gray">Maintenance</span></td>
                   </tr>
                 </tbody>
@@ -1728,114 +1746,114 @@
             </div>
           </div>
           <div class="section-head">
-            <h2>Choisissez votre abonnement</h2><span>Le paiement active l’inscription</span>
+            <h2>Choose your subscription</h2><span>Payment activates registration</span>
           </div>
           <div class="mini-cards">
             <div class="mini-card"><span class="badge gray">BRONZE</span>
               <div class="big">5 bus</div>
-              <p>Plan de démarrage · Tarif à définir</p><button class="btn btn-outline"
-                style="margin-top:12px;width:100%" onclick="choosePlan('Bronze','5 bus')">Sélectionner</button>
+              <p>Plan de démarrage · Price to be confirmed</p><button class="btn btn-outline"
+                style="margin-top:12px;width:100%" onclick="choosePlan('Bronze','5 bus')">Select</button>
             </div>
             <div class="mini-card"><span class="badge orange">SILVER</span>
               <div class="big">35 bus</div>
-              <p>Pour les flottes en croissance · Tarif à définir</p><button class="btn btn-orange"
-                style="margin-top:12px;width:100%" onclick="choosePlan('Silver','35 bus')">Sélectionner</button>
+              <p>For growing fleets · Price to be confirmed</p><button class="btn btn-orange"
+                style="margin-top:12px;width:100%" onclick="choosePlan('Silver','35 bus')">Select</button>
             </div>
             <div class="mini-card"><span class="badge">GOLD</span>
               <div class="big">50 bus</div>
-              <p>Pour les grands réseaux · Tarif à définir</p><button class="btn btn-outline"
-                style="margin-top:12px;width:100%" onclick="choosePlan('Gold','50 bus')">Sélectionner</button>
+              <p>For large networks · Price to be confirmed</p><button class="btn btn-outline"
+                style="margin-top:12px;width:100%" onclick="choosePlan('Gold','50 bus')">Select</button>
             </div>
             <div class="mini-card"><span class="badge gray">PREMIUM</span>
               <div class="big">Illimité</div>
-              <p>Flotte sans limite · Mensuel</p><button class="btn btn-outline" style="margin-top:12px;width:100%"
-                onclick="choosePlan('Premium','bus illimités')">Sélectionner</button>
+              <p>Unlimited fleet · Monthly</p><button class="btn btn-outline" style="margin-top:12px;width:100%"
+                onclick="choosePlan('Premium','bus illimités')">Select</button>
             </div>
           </div>
-          <div class="notice">Les tarifs des abonnements sont volontairement indiqués « à définir » : le client doit
-            confirmer les prix, frais d’intégration et devise avant le lancement. Le verrouillage du compte jusqu’au
-            paiement est représenté dans le parcours, mais le paiement est simulé ici.</div>
+          <div class="notice">Subscription prices are marked “to be confirmed”. Confirm pricing, integration fees and
+            currency before launch. Account activation after payment is represented in this demo, but payment is
+            simulated.</div>
         </section>
         <section class="page" id="page-partner">
           <div class="welcome">
             <div>
-              <div class="eyebrow">PORTAIL PARTENAIRES</div>
-              <h1>Devenez partenaire.</h1>
-              <p>Attirez des voyageurs, mettez vos offres en avant et mesurez vos résultats.</p>
+              <div class="eyebrow">PARTNER PORTAL</div>
+              <h1>Become a partner.</h1>
+              <p>Attract travellers, promote your offers and measure your results.</p>
             </div><span class="pill">Restaurants · Hôtels · Santé · Stations</span>
           </div>
           <div class="stats">
             <div class="stat">
-              <div class="stat-top">Vues de l’offre <span class="stat-icon">◉</span></div><strong>2
+              <div class="stat-top">Offer views <span class="stat-icon">◉</span></div><strong>2
                 840</strong><small>Exemple ce mois</small>
             </div>
             <div class="stat">
-              <div class="stat-top">Utilisations <span class="stat-icon">✓</span></div>
+              <div class="stat-top">Redemptions <span class="stat-icon">✓</span></div>
               <strong>186</strong><small>Remises simulées</small>
             </div>
             <div class="stat">
-              <div class="stat-top">Revenu attribué <span class="stat-icon">↗</span></div><strong>642
-                k</strong><small>FCFA · Estimation démo</small>
+              <div class="stat-top">Attributed revenue <span class="stat-icon">↗</span></div><strong>R
+                64,200</strong><small>ZAR · Demo estimate</small>
             </div>
           </div>
           <div class="form-card">
-            <h3 style="margin-top:0">Créer votre fiche partenaire</h3>
+            <h3 style="margin-top:0">Create your partner profile</h3>
             <div class="form-grid">
-              <div class="field"><label>NOM DE L’ÉTABLISSEMENT</label><input id="partnerName"
-                  placeholder="Ex. Hôtel Soleil"></div>
-              <div class="field"><label>CATÉGORIE</label><select id="partnerCategory">
+              <div class="field"><label>BUSINESS NAME</label><input id="partnerName"
+                  placeholder="Ex. Cape View Guesthouse"></div>
+              <div class="field"><label>CATEGORY</label><select id="partnerCategory">
                   <option>Restaurant</option>
                   <option>Hôtel</option>
                   <option>Clinique</option>
                   <option>Station-service</option>
                 </select></div>
-              <div class="field"><label>VILLE</label><input placeholder="Votre ville"></div>
-              <div class="field"><label>TÉLÉPHONE</label><input placeholder="+225 …"></div>
-              <div class="field"><label>REMISE PROPOSÉE</label><input placeholder="Ex. 10 % sur les repas"></div>
-              <div class="field"><label>LOCALISATION GPS / ADRESSE</label><input
-                  placeholder="Adresse ou coordonnées GPS"></div>
+              <div class="field"><label>CITY</label><input placeholder="Votre ville"></div>
+              <div class="field"><label>PHONE</label><input placeholder="+27 82 000 0000"></div>
+              <div class="field"><label>DISCOUNT OFFER</label><input placeholder="Ex. 10 % sur les repas"></div>
+              <div class="field"><label>GPS LOCATION / ADDRESS</label><input placeholder="Adresse ou coordonnées GPS">
+              </div>
             </div>
             <div class="form-actions"><button class="btn btn-orange" onclick="registerPartner()">Créer ma fiche
                 partenaire →</button></div>
           </div>
           <div class="section-head">
-            <h2>Abonnements partenaires</h2><span>Offres mensuelles</span>
+            <h2>Partner subscriptions</h2><span>Offres mensuelles</span>
           </div>
           <div class="mini-cards">
             <div class="mini-card"><span class="badge gray">FREE</span>
-              <div class="big">Gratuit</div>
+              <div class="big">Free</div>
               <p>Fiche établissement et visibilité de base.</p><button class="btn btn-outline"
-                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Free')">Commencer</button>
+                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Free')">Get started</button>
             </div>
             <div class="mini-card"><span class="badge orange">PRO</span>
               <div class="big">À définir / mois</div>
               <p>Meilleure visibilité et statistiques.</p><button class="btn btn-orange"
-                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Pro')">Choisir Pro</button>
+                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Pro')">Choose Pro</button>
             </div>
             <div class="mini-card"><span class="badge">ELITE</span>
               <div class="big">À définir / mois</div>
               <p>Visibilité premium et analyses avancées.</p><button class="btn btn-outline"
-                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Elite')">Choisir Elite</button>
+                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Elite')">Choose Elite</button>
             </div>
           </div>
         </section>
         <section class="page" id="page-help">
           <div class="welcome">
             <div>
-              <div class="eyebrow">NOUS SOMMES LÀ</div>
-              <h1>Aide & accessibilité</h1>
-              <p>CI Voyage est pensé pour les connexions lentes et les usages mobiles.</p>
+              <div class="eyebrow">WE ARE HERE TO HELP</div>
+              <h1>Help & accessibility</h1>
+              <p>CI Voyage is designed for slow connections and mobile use.</p>
             </div>
           </div>
           <div class="two-col">
             <div class="panel">
               <div class="panel-title">
-                <h3>Conçu pour l’Afrique</h3>
+                <h3>Built for Africa</h3>
               </div>
               <div class="offer">
                 <div class="offer-icon">📶</div>
-                <div><strong>Mode réseau faible</strong>
-                  <p>Interface légère, formulaires simples et billets enregistrables pour consultation hors connexion.
+                <div><strong>Low-bandwidth mode</strong>
+                  <p>A lightweight interface, simple forms and tickets that can be saved for offline viewing.
                   </p>
                 </div>
               </div>
@@ -1849,41 +1867,42 @@
               <div class="offer">
                 <div class="offer-icon">💬</div>
                 <div><strong>WhatsApp & SMS</strong>
-                  <p>Confirmation, rappels de départ et suivi de colis via des intégrations à connecter.</p>
+                  <p>Confirmations, departure reminders and parcel tracking require integrations.</p>
                 </div>
               </div>
               <div class="offer">
                 <div class="offer-icon">🌍</div>
-                <div><strong>Langues africaines</strong>
-                  <p>Préparation multilingue : français, anglais, kiswahili, haoussa, yorùbá, amharique et portugais.
-                    D’autres langues pourront être ajoutées par pays.</p>
+                <div><strong>African languages</strong>
+                  <p>Choose English, Afrikaans, isiZulu, isiXhosa, Sesotho, Setswana, Sepedi, Xitsonga, Tshivenda,
+                    siSwati, isiNdebele or Shona. Some content in this prototype may remain in English.</p>
                 </div>
               </div>
             </div>
             <div class="panel">
               <div class="panel-title">
-                <h3>Contacter l’assistance</h3>
+                <h3>Contact support</h3>
               </div>
               <div class="form-grid">
-                <div class="field full"><label>VOTRE NOM</label><input id="helpName" placeholder="Nom complet"></div>
-                <div class="field full"><label>SUJET</label><select>
-                    <option>Réservation et paiement</option>
-                    <option>Billet ou QR code</option>
-                    <option>Colis et bagages</option>
-                    <option>Transporteur ou partenaire</option>
-                    <option>Autre demande</option>
+                <div class="field full"><label>YOUR NAME</label><input id="helpName" placeholder="Nom complet"></div>
+                <div class="field full"><label>SUBJECT</label><select>
+                    <option>Booking and payment</option>
+                    <option>Ticket or QR code</option>
+                    <option>Parcels and luggage</option>
+                    <option>Operator or partner</option>
+                    <option>Other request</option>
                   </select></div>
-                <div class="field full"><label>VOTRE MESSAGE</label><input id="helpMessage"
-                    placeholder="Comment pouvons-nous vous aider ?"></div>
+                <div class="field full"><label>YOUR MESSAGE</label><input id="helpMessage"
+                    placeholder="How can we help you?"></div>
               </div>
               <div class="form-actions"><button class="btn btn-orange"
-                  onclick="toast('Demande de démonstration enregistrée localement. Aucun message réel envoyé.')">Envoyer
+                  onclick="toast('Demo request saved locally. No real message sent.')">Send
                   la demande</button></div>
-              <div class="notice">Cette démo ne transmet pas réellement les messages et n’effectue aucun paiement.</div>
+              <div class="notice">This demo does not send messages or process real payments.</div>
             </div>
           </div>
         </section>
-        <div class="footer-note">CI VOYAGE · Prototype interactif — données, paiements, GPS et QR simulés · © 2026</div>
+        <div class="footer-note">CI VOYAGE · Interactive prototype — demo data, payments, GPS and QR codes are simulated
+          · © 2026</div>
       </main>
     </div>
     <nav class="mobile-nav">
@@ -1893,7 +1912,7 @@
       <button data-page="tickets" onclick="go('tickets',this)"><span>▣</span><b
           data-i18n="ticketsShort">Billets</b></button>
       <button data-page="parcels" onclick="go('parcels',this)"><span>▤</span><b
-          data-i18n="parcelsShort">Colis</b></button>
+          data-i18n="parcelsShort">Parcels</b></button>
       <button data-page="company" onclick="go('company',this)"><span>▦</span><b
           data-i18n="businessShort">Pro</b></button>
     </nav>
@@ -1901,46 +1920,51 @@
   <div class="toast" id="toast"></div>
   <div class="modal-backdrop" id="paymentModal" onclick="if(event.target===this)closePayment()">
     <div class="modal"><button class="modal-close" onclick="closePayment()">✕</button>
-      <div class="eyebrow">PAIEMENT SÉCURISÉ</div>
-      <h2>Choisissez votre paiement</h2>
-      <p id="paymentSummary">Votre billet — prix de démonstration</p><label class="payment-option"><input type="radio"
-          name="payment" checked value="Mobile Money">📱 Mobile Money <span>Orange · MTN · Moov ·
-          Wave</span></label><label class="payment-option"><input type="radio" name="payment" value="Carte bancaire">💳
-        Carte bancaire <span>Visa · Mastercard</span></label><label class="payment-option"><input type="radio"
-          name="payment" value="Virement bancaire">🏦 Virement bancaire</label><label class="payment-option"><input
-          type="radio" name="payment" value="Portefeuille CI Voyage">👛 Portefeuille CI Voyage</label>
-      <div class="notice">Démo uniquement : aucun paiement réel ne sera débité.</div><button class="btn btn-orange"
-        style="width:100%" onclick="confirmPayment()">Confirmer la réservation ✓</button>
+      <div class="eyebrow">SECURE CHECKOUT</div>
+      <h2>Choose a payment method</h2>
+      <p id="paymentSummary">Your ticket — demo price</p><label class="payment-option"><input type="radio"
+          name="payment" checked value="EFT / Instant EFT">🏦 EFT / Instant EFT <span>Supported provider
+          required</span></label><label class="payment-option"><input type="radio" name="payment" value="Bank card">💳
+        Bank card <span>Visa · Mastercard</span></label><label class="payment-option"><input type="radio" name="payment"
+          value="Bank transfer">🏦 Bank transfer</label><label class="payment-option"><input type="radio" name="payment"
+          value="Digital wallet">👛 Digital wallet</label>
+      <div class="notice">Demo only: no real payment will be charged.</div><button class="btn btn-orange"
+        style="width:100%" onclick="confirmPayment()">Confirm booking ✓</button>
     </div>
   </div>
   <script>
     const i18n = {
-      fr: { passenger: "VOYAGEUR", home: "Accueil", book: "Réserver un trajet", tickets: "Mes billets", parcels: "Colis & bagages", deals: "Offres sur la route", ecosystem: "ÉCOSYSTÈME", company: "Espace transporteur", partner: "Espace partenaire", help: "Aide & accessibilité", welcome: "BONJOUR, AMINA 👋", headline: "Le voyage vous rapproche.", subheadline: "Voyagez, envoyez et découvrez l’Afrique autrement.", network: "Réseau de démonstration", heroTitle: "Une Afrique. Des milliers de destinations.", heroText: "Comparez les trajets, choisissez votre siège et payez avec votre moyen préféré. Votre voyage, dans votre poche.", findTrip: "⌕ Trouver un trajet", sendParcel: "＋ Envoyer un colis", searchTitle: "Où souhaitez-vous aller ?", searchCaption: "Simple • sûr • connecté", oneWay: "Aller simple", returnTrip: "Aller-retour", multiHop: "Multi-trajets", from: "DÉPART", to: "DESTINATION", date: "DATE DE DÉPART", passengers: "VOYAGEURS", search: "Rechercher ↗", myTickets: "Mes billets", readyTravel: "Prêts à voyager", saved: "Économies", partnerSavings: "Grâce aux offres partenaires", parcel: "Colis", inTransit: "En cours d’acheminement", popularRoutes: "Trajets populaires", seeAll: "Tout voir →", routeDeals: "Vos avantages sur la route", explore: "Explorer", bookShort: "Réserver", ticketsShort: "Billets", parcelsShort: "Colis", businessShort: "Pro" },
-      en: { passenger: "TRAVELLER", home: "Home", book: "Book a trip", tickets: "My tickets", parcels: "Parcels & luggage", deals: "Offers on the route", ecosystem: "ECOSYSTEM", company: "Bus operator", partner: "Partner portal", help: "Help & accessibility", welcome: "HELLO, AMINA 👋", headline: "Every journey brings us closer.", subheadline: "Travel, send parcels and discover Africa differently.", network: "Demo network", heroTitle: "One Africa. Thousands of destinations.", heroText: "Compare routes, choose your seat and pay your way. Your journey, in your pocket.", findTrip: "⌕ Find a trip", sendParcel: "＋ Send a parcel", searchTitle: "Where would you like to go?", searchCaption: "Simple • safe • connected", oneWay: "One way", returnTrip: "Return", multiHop: "Multi-stop", from: "FROM", to: "DESTINATION", date: "DEPARTURE DATE", passengers: "PASSENGERS", search: "Search ↗", myTickets: "My tickets", readyTravel: "Ready to travel", saved: "Savings", partnerSavings: "Through partner offers", parcel: "Parcels", inTransit: "In transit", popularRoutes: "Popular routes", seeAll: "View all →", routeDeals: "Your route benefits", explore: "Explore", bookShort: "Book", ticketsShort: "Tickets", parcelsShort: "Parcels", businessShort: "Business" },
-      sw: { passenger: "MSAFIRI", home: "Nyumbani", book: "Weka nafasi", tickets: "Tiketi zangu", parcels: "Vifurushi na mizigo", deals: "Ofa njiani", ecosystem: "MTANDAO", company: "Kampuni ya mabasi", partner: "Washirika", help: "Msaada na ufikivu", welcome: "KARIBU, AMINA 👋", headline: "Kila safari hutuleta karibu.", subheadline: "Safiri, tuma vifurushi na ugundue Afrika.", network: "Mtandao wa majaribio", heroTitle: "Afrika moja. Maeneo mengi.", heroText: "Linganisha safari, chagua kiti na ulipe kwa njia unayopendelea.", findTrip: "⌕ Tafuta safari", sendParcel: "＋ Tuma kifurushi", searchTitle: "Ungependa kwenda wapi?", searchCaption: "Rahisi • salama • imeunganishwa", oneWay: "Kwenda", returnTrip: "Kwenda na kurudi", multiHop: "Safari nyingi", from: "KUTOKA", to: "KWENDA", date: "TAREHE YA SAFARI", passengers: "ABIRIA", search: "Tafuta ↗", myTickets: "Tiketi zangu", readyTravel: "Tayari kusafiri", saved: "Akiba", partnerSavings: "Kupitia ofa za washirika", parcel: "Vifurushi", inTransit: "Njiani", popularRoutes: "Safari maarufu", seeAll: "Ona zote →", routeDeals: "Faida zako njiani", explore: "Gundua", bookShort: "Weka nafasi", ticketsShort: "Tiketi", parcelsShort: "Vifurushi", businessShort: "Biashara" },
-      ha: { passenger: "MATAFI", home: "Gida", book: "Yi ajiyar tafiya", tickets: "Tikiti na", parcels: "Kaya da kaya", deals: "Kyaututtuka a hanya", ecosystem: "TSARIN HAƊIN GWIWA", company: "Kamfanin mota", partner: "Abokan hulɗa", help: "Taimako da sauƙin amfani", welcome: "SANNUN KI, AMINA 👋", headline: "Tafiya tana haɗa mu.", subheadline: "Yi tafiya, aika kaya, gano Afirka.", network: "Gwajin dandali", heroTitle: "Afirka ɗaya. Wurare dubbai.", heroText: "Kwatanta hanyoyi, zaɓi kujera, biya yadda kike so.", findTrip: "⌕ Nemo tafiya", sendParcel: "＋ Aika kaya", searchTitle: "Ina kike son zuwa?", searchCaption: "Sauƙi • aminci • haɗin kai", oneWay: "Tafiya ɗaya", returnTrip: "Komawa", multiHop: "Hanyoyi da yawa", from: "DAGA", to: "ZUWA", date: "RANAR TAFIYA", passengers: "FASINJOJI", search: "Nema ↗", myTickets: "Tikiti na", readyTravel: "A shirye", saved: "Ajiyar kuɗi", partnerSavings: "Ta tayin abokan hulɗa", parcel: "Kaya", inTransit: "A hanya", popularRoutes: "Shahararrun hanyoyi", seeAll: "Duba duka →", routeDeals: "Fa'idodi a hanya", explore: "Bincika", bookShort: "Ajiya", ticketsShort: "Tikiti", parcelsShort: "Kaya", businessShort: "Kasuwanci" },
-      yo: { passenger: "ARÌNRÌN", home: "Ilé", book: "Fowo sí ìrìnàjò", tickets: "Àwọn tikẹ́ẹ̀tì mi", parcels: "Ẹrù àti àpò", deals: "Àwọn àǹfààní ọ̀nà", ecosystem: "ÈTÒ ÌṢẸ́", company: "Ilé iṣẹ́ ọkọ̀", partner: "Àwọn alábáṣiṣẹ́pọ̀", help: "Ìrànlọ́wọ́ àti ìrọ̀rùn", welcome: "Ẹ KÁÀBỌ̀, AMINA 👋", headline: "Ìrìnàjò so wá pọ̀.", subheadline: "Rìnrìnàjò, fi ẹrù ránṣẹ́, kí o sì ṣàwárí Áfíríkà.", network: "Nẹ́tíwọ́ọ̀kì ìdánwò", heroTitle: "Áfíríkà kan. Ẹgbẹẹgbẹ̀rún ibi.", heroText: "Fi àwọn ọ̀nà wé ara wọn, yan ìjókòó, kí o sì sanwó bí o ṣe fẹ́.", findTrip: "⌕ Wá ìrìnàjò", sendParcel: "＋ Fi ẹrù ránṣẹ́", searchTitle: "Ibo ni o fẹ́ lọ?", searchCaption: "Rọrùn • ààbò • ìsopọ̀", oneWay: "Ọ̀nà kan", returnTrip: "Padà", multiHop: "Ọ̀pọ̀ ọ̀nà", from: "LÁTI", to: "SÍ", date: "ỌJỌ́ ÌRÌNÀJÒ", passengers: "ÀWỌN ARÌNRÌN", search: "Wá ↗", myTickets: "Tikẹ́ẹ̀tì mi", readyTravel: "Ṣetán láti lọ", saved: "Ìfipamọ́", partnerSavings: "Nípasẹ̀ àwọn àǹfààní", parcel: "Ẹrù", inTransit: "Lọ́wọ́ ọ̀nà", popularRoutes: "Àwọn ọ̀nà tó gbajúmọ̀", seeAll: "Wo gbogbo rẹ̀ →", routeDeals: "Àǹfààní rẹ ní ọ̀nà", explore: "Ṣàwárí", bookShort: "Fowo sí", ticketsShort: "Tikẹ́ẹ̀tì", parcelsShort: "Ẹrù", businessShort: "Iṣẹ́" },
-      am: { passenger: "ተጓዥ", home: "መነሻ", book: "ጉዞ ይያዙ", tickets: "ትኬቶቼ", parcels: "እቃዎች", deals: "የመንገድ ቅናሾች", ecosystem: "አገልግሎቶች", company: "የአውቶቡስ ኩባንያ", partner: "አጋሮች", help: "እገዛ", welcome: "እንኳን ደህና መጡ, AMINA 👋", headline: "ጉዞ ያቀራርበናል።", subheadline: "ተጓዙ፣ እቃ ላኩ፣ አፍሪካን በአዲስ መንገድ ያግኙ።", network: "የሙከራ አውታረ መረብ", heroTitle: "አንድ አፍሪካ። ብዙ መዳረሻዎች።", heroText: "መንገዶችን ያወዳድሩ፣ መቀመጫ ይምረጡ እና በሚፈልጉት መንገድ ይክፈሉ።", findTrip: "⌕ ጉዞ ፈልግ", sendParcel: "＋ እቃ ላክ", searchTitle: "ወዴት መሄድ ይፈልጋሉ?", searchCaption: "ቀላል • ደህንነቱ የተጠበቀ • የተገናኘ", oneWay: "አንድ መንገድ", returnTrip: "መመለስ", multiHop: "ብዙ መንገዶች", from: "ከ", to: "ወደ", date: "የጉዞ ቀን", passengers: "ተጓዦች", search: "ፈልግ ↗", myTickets: "ትኬቶቼ", readyTravel: "ለጉዞ ዝግጁ", saved: "ቁጠባ", partnerSavings: "በአጋር ቅናሾች", parcel: "እቃዎች", inTransit: "በጉዞ ላይ", popularRoutes: "ታዋቂ መንገዶች", seeAll: "ሁሉንም ይመልከቱ →", routeDeals: "የመንገድ ጥቅሞች", explore: "ይመልከቱ", bookShort: "ያዙ", ticketsShort: "ትኬቶች", parcelsShort: "እቃዎች", businessShort: "ንግድ" },
-      pt: { passenger: "PASSAGEIRO", home: "Início", book: "Reservar viagem", tickets: "Os meus bilhetes", parcels: "Encomendas e bagagem", deals: "Ofertas no percurso", ecosystem: "ECOSSISTEMA", company: "Operadora de autocarros", partner: "Portal de parceiros", help: "Ajuda e acessibilidade", welcome: "OLÁ, AMINA 👋", headline: "A viagem aproxima-nos.", subheadline: "Viaje, envie encomendas e descubra África de outra forma.", network: "Rede de demonstração", heroTitle: "Uma África. Milhares de destinos.", heroText: "Compare rotas, escolha o seu lugar e pague como preferir.", findTrip: "⌕ Encontrar viagem", sendParcel: "＋ Enviar encomenda", searchTitle: "Para onde deseja ir?", searchCaption: "Simples • seguro • conectado", oneWay: "Só ida", returnTrip: "Ida e volta", multiHop: "Várias etapas", from: "PARTIDA", to: "DESTINO", date: "DATA DE PARTIDA", passengers: "PASSAGEIROS", search: "Pesquisar ↗", myTickets: "Os meus bilhetes", readyTravel: "Prontos para viajar", saved: "Poupanças", partnerSavings: "Com ofertas dos parceiros", parcel: "Encomendas", inTransit: "Em trânsito", popularRoutes: "Rotas populares", seeAll: "Ver tudo →", routeDeals: "Vantagens no percurso", explore: "Explorar", bookShort: "Reservar", ticketsShort: "Bilhetes", parcelsShort: "Encomendas", businessShort: "Empresa" }
+      en: { passenger: "TRAVELLER", home: "Home", book: "Book a trip", tickets: "My tickets", parcels: "Parcels & luggage", deals: "Offers on the route", ecosystem: "NETWORK", company: "Bus operator", partner: "Partner portal", help: "Help & accessibility", welcome: "WELCOME, AMINA 👋", headline: "Every journey brings us closer.", subheadline: "Travel, send parcels and discover South Africa.", network: "Demo network", heroTitle: "Explore South Africa, one journey at a time.", heroText: "Compare routes, choose your seat and pay your way. Your journey, in your pocket.", findTrip: "⌕ Find a trip", sendParcel: "＋ Send a parcel", searchTitle: "Where would you like to go?", searchCaption: "Simple • safe • connected", oneWay: "One way", returnTrip: "Return", multiHop: "Multi-stop", from: "FROM", to: "DESTINATION", date: "DEPARTURE DATE", passengers: "PASSENGERS", search: "Search ↗", myTickets: "My tickets", readyTravel: "Ready to travel", saved: "Savings", partnerSavings: "Through partner offers", parcel: "Parcels", inTransit: "In transit", popularRoutes: "Popular routes", seeAll: "View all →", routeDeals: "Your route benefits", explore: "Explore", bookShort: "Book", ticketsShort: "Tickets", parcelsShort: "Parcels", businessShort: "Business" },
+      af: { passenger: "REISIGER", home: "Tuis", book: "Bespreek 'n reis", tickets: "My kaartjies", parcels: "Pakkies en bagasie", deals: "Aanbiedinge langs die pad", ecosystem: "NETWERK", company: "Busoperateur", partner: "Vennootportaal", help: "Hulp en toeganklikheid", welcome: "WELKOM, AMINA 👋", headline: "Elke reis bring ons nader.", subheadline: "Reis, stuur pakkies en ontdek Suid-Afrika.", network: "Demonstrasienetwerk", heroTitle: "Verken Suid-Afrika, een reis op 'n slag.", heroText: "Vergelyk roetes, kies jou sitplek en betaal soos jy verkies.", findTrip: "⌕ Vind 'n reis", sendParcel: "＋ Stuur 'n pakkie", searchTitle: "Waarheen wil jy gaan?", searchCaption: "Eenvoudig • veilig • verbind", oneWay: "Eenrigting", returnTrip: "Heen en terug", multiHop: "Veelvuldige roetes", from: "VANAF", to: "BESTEMMING", date: "VERTREKDATUM", passengers: "PASSASIERS", search: "Soek ↗", myTickets: "My kaartjies", readyTravel: "Gereed om te reis", saved: "Besparings", partnerSavings: "Deur vennootaanbiedinge", parcel: "Pakkies", inTransit: "Onderweg", popularRoutes: "Gewilde roetes", seeAll: "Sien alles →", routeDeals: "Voordele langs die roete", explore: "Verken", bookShort: "Bespreek", ticketsShort: "Kaartjies", parcelsShort: "Pakkies", businessShort: "Besigheid" },
+      zu: { passenger: "UMHAMBI", home: "Ekhaya", book: "Bhukha uhambo", tickets: "Amathikithi ami", parcels: "Amaphasela nemithwalo", deals: "Izaphulelo endleleni", ecosystem: "INETHIWEKHI", company: "Umqhubi wamabhasi", partner: "Abalingani", help: "Usizo nokufinyeleleka", welcome: "SAWUBONA, AMINA 👋", headline: "Uhambo lusisondeza.", subheadline: "Hamba, thumela amaphasela futhi uthole iNingizimu Afrika.", network: "Inethiwekhi yedemo", heroTitle: "Hlola iNingizimu Afrika, uhambo olulodwa ngesikhathi.", heroText: "Qhathanisa imizila, khetha isihlalo bese ukhokha ngendlela oyithandayo.", findTrip: "⌕ Thola uhambo", sendParcel: "＋ Thumela iphasela", searchTitle: "Ungathanda ukuya kuphi?", searchCaption: "Kulula • kuphephile • kuxhunyiwe", oneWay: "Uhambo oluya kuphela", returnTrip: "Ukuya nokubuya", multiHop: "Imizila eminingi", from: "USUKA", to: "INDLELA YOKUYA", date: "USUKU LOHAMBO", passengers: "ABAGIBELI", search: "Sesha ↗", myTickets: "Amathikithi ami", readyTravel: "Ukulungele ukuhamba", saved: "Ukonga", partnerSavings: "Ngezaphulelo zabalingani", parcel: "Amaphasela", inTransit: "Kusendleleni", popularRoutes: "Imizila ethandwayo", seeAll: "Bona konke →", routeDeals: "Izinzuzo zakho endleleni", explore: "Hlola", bookShort: "Bhukha", ticketsShort: "Amathikithi", parcelsShort: "Amaphasela", businessShort: "Ibhizinisi" },
+      xh: { passenger: "UMHAMBI", home: "Ekhaya", book: "Bhukisha uhambo", tickets: "Amatikiti am", parcels: "Iipasile nemithwalo", deals: "Izibonelelo endleleni", ecosystem: "UTHUNGELWANO", company: "Umqhubi webhasi", partner: "Amaqabane", help: "Uncedo nokufikeleleka", welcome: "MOLWENI, AMINA 👋", headline: "Uhambo lusisondeza.", subheadline: "Hamba, thumela iipasile uze ufumanise uMzantsi Afrika.", network: "Uthungelwano lovavanyo", heroTitle: "Fumanisa uMzantsi Afrika, uhambo olunye ngexesha.", heroText: "Thelekisa iindlela, khetha isihlalo uze uhlawule ngendlela oyithandayo.", findTrip: "⌕ Fumana uhambo", sendParcel: "＋ Thumela ipasile", searchTitle: "Ungathanda ukuya phi?", searchCaption: "Kulula • kukhuselekile • kuqhagamshelene", oneWay: "Uhambo lokuya", returnTrip: "Ukuya nokubuya", multiHop: "Iindlela ezininzi", from: "UKUSUKA", to: "INDAWO", date: "UMHLA WOHAMBO", passengers: "ABAKHWEZI", search: "Khangela ↗", myTickets: "Amatikiti am", readyTravel: "Ukulungele ukuhamba", saved: "Ugcino", partnerSavings: "Ngezibonelelo zamaqabane", parcel: "Iipasile", inTransit: "Endleleni", popularRoutes: "Iindlela ezithandwayo", seeAll: "Bona zonke →", routeDeals: "Izibonelelo zendlela", explore: "Fumanisa", bookShort: "Bhukisha", ticketsShort: "Amatikiti", parcelsShort: "Iipasile", businessShort: "Ishishini" },
+      st: { passenger: "MOTSAMAI", home: "Lehae", book: "Behela leeto", tickets: "Ditekete tsa ka", parcels: "Diphuthelwana le merwalo", deals: "Dimpho tseleng", ecosystem: "MARANGRANG", company: "Mokganni wa bese", partner: "Balekane", help: "Thuso le phihlello", welcome: "DUMELA, AMINA 👋", headline: "Leeto le re atametsa.", subheadline: "Eta, romela diphuthelwana mme o sibolle Afrika Borwa.", network: "Marangrang a teko", heroTitle: "Sibolla Afrika Borwa, leeto ka nako.", heroText: "Bapisa ditsela, kgetha setulo mme o lefe ka tsela eo o e ratang.", findTrip: "⌕ Fumana leeto", sendParcel: "＋ Romela sephuthelwana", searchTitle: "O batla ho ya kae?", searchCaption: "Bonolo • polokeho • kgokahano", oneWay: "Leeto la ho ya", returnTrip: "Ho ya le ho kgutla", multiHop: "Ditsela tse ngata", from: "HO TLOHA", to: "HO YA", date: "LETSATSI LA LEETO", passengers: "BAPALAMI", search: "Batla ↗", myTickets: "Ditekete tsa ka", readyTravel: "O loketse ho eta", saved: "Poloko", partnerSavings: "Ka dimpho tsa balekane", parcel: "Diphuthelwana", inTransit: "Tseleng", popularRoutes: "Ditsela tse tumileng", seeAll: "Bona tsohle →", routeDeals: "Melemo tseleng", explore: "Lekola", bookShort: "Behela", ticketsShort: "Ditekete", parcelsShort: "Diphuthelwana", businessShort: "Kgwebo" },
+      tn: { passenger: "MOTSAMAISANI", home: "Gae", book: "Beakanya loeto", tickets: "Ditekete tsa me", parcels: "Diphuthelwana le merwalo", deals: "Ditsholofelo mo tseleng", ecosystem: "MARANGRANG", company: "Motsamaisi wa bese", partner: "Balekane", help: "Thuso", welcome: "DUMELA, AMINA 👋", headline: "Loeto lo re atametsa.", subheadline: "Eta, romela diphuthelwana o bo o itseele Aforika Borwa.", network: "Marangrang a teko", heroTitle: "Ithute Aforika Borwa ka loeto longwe ka nako.", heroText: "Bapisa ditsela, tlhopha setulo mme o duele ka tsela e o e ratang.", findTrip: "⌕ Batla loeto", sendParcel: "＋ Romela sephuthelwana", searchTitle: "O batla go ya kae?", searchCaption: "Bonolo • pabalesego • kgokagano", oneWay: "Go ya", returnTrip: "Go ya le go boa", multiHop: "Ditsela tse dintsi", from: "GO TSWA", to: "GO YA", date: "LETSATSI LA LOETO", passengers: "BAETA", search: "Batla ↗", myTickets: "Ditekete tsa me", readyTravel: "O ipaakanyeditse", saved: "Poloko", partnerSavings: "Ka ditsholofelo tsa balekane", parcel: "Diphuthelwana", inTransit: "Mo tseleng", popularRoutes: "Ditsela tse di ratwang", seeAll: "Bona tsotlhe →", routeDeals: "Melemo mo tseleng", explore: "Ithute", bookShort: "Beakanya", ticketsShort: "Ditekete", parcelsShort: "Diphuthelwana", businessShort: "Kgwebo" },
+      nso: { passenger: "MOTSEPETŠI", home: "Gae", book: "Beeletša leeto", tickets: "Ditekete tša ka", parcels: "Dipakete le merwalo", deals: "Ditheolelo tseleng", ecosystem: "KGOPELO", company: "Molaodi wa pese", partner: "Balekane", help: "Thušo", welcome: "DUMELA, AMINA 👋", headline: "Leeto le re batametša.", subheadline: "Sepela, romela dipakete gomme o tsebe Afrika Borwa.", network: "Netweke ya teko", heroTitle: "Tseba Afrika Borwa, leeto le tee ka nako.", heroText: "Bapetša ditsela, kgetha setulo gomme o lefe ka tsela ye o e ratago.", findTrip: "⌕ Nyaka leeto", sendParcel: "＋ Romela pakete", searchTitle: "O nyaka go ya kae?", searchCaption: "Bonolo • polokego • kgokagano", oneWay: "Go ya", returnTrip: "Go ya le go boa", multiHop: "Ditsela tše dintši", from: "GO TŠWA", to: "GO YA", date: "LETŠATŠI LA LEETO", passengers: "BASEPedi", search: "Nyaka ↗", myTickets: "Ditekete tša ka", readyTravel: "O loketše go sepela", saved: "Poloko", partnerSavings: "Ka ditheolelo tša balekane", parcel: "Dipakete", inTransit: "Tseleng", popularRoutes: "Ditsela tše di tumilego", seeAll: "Bona tšohle →", routeDeals: "Mehola ya tsela", explore: "Lekola", bookShort: "Beeletša", ticketsShort: "Ditekete", parcelsShort: "Dipakete", businessShort: "Kgwebo" },
+      ts: { passenger: "MUNHU WA RIENDZO", home: "Kaya", book: "Buka riendzo", tickets: "Tikitshiti ta mina", parcels: "Tiphasela ni mindzhwalo", deals: "Switshembiso endleleni", ecosystem: "NTIRHISANO", company: "Mufambisi wa bazi", partner: "Vatirhisani", help: "Mpfuno", welcome: "AVUXENI, AMINA 👋", headline: "Riendzo ri hi tshineta.", subheadline: "Famba, rhumela tiphasela u tlhela u tiva Afrika-Dzonga.", network: "Netiweki ya nkombiso", heroTitle: "Tiva Afrika-Dzonga, riendzo rin'we hi nkarhi.", heroText: "Fananisa tindlela, hlawula xitulu u tlhela u hakela hi ndlela leyi u yi lavaka.", findTrip: "⌕ Lava riendzo", sendParcel: "＋ Rhumela phasela", searchTitle: "U lava ku ya kwihi?", searchCaption: "Swo olova • hlayisekile • swi hlanganisiwile", oneWay: "Ku ya", returnTrip: "Ku ya ni ku vuya", multiHop: "Tindlela to tala", from: "KU SUKA", to: "KU YA", date: "SIKU RA RIENDZO", passengers: "Vafambi", search: "Lava ↗", myTickets: "Tikitshiti ta mina", readyTravel: "Lulamile ku famba", saved: "Ku hlayisa", partnerSavings: "Hi switshembiso swa vatirhisani", parcel: "Tiphasela", inTransit: "Endleleni", popularRoutes: "Tindlela leti dumeke", seeAll: "Vona hinkwato →", routeDeals: "Mimbuyelo endleleni", explore: "Kambisisa", bookShort: "Buka", ticketsShort: "Tikitshiti", parcelsShort: "Tiphasela", businessShort: "Bindzu" },
+      ve: { passenger: "MUHAMBIRI", home: "Hayani", book: "Vhukha lwendo", tickets: "Thikithi dzanga", parcels: "Dziphasela na mihwalo", deals: "Zwide zwavhudi ndilani", ecosystem: "VHUDZANI", company: "Mufhiri wa bisi", partner: "Vhashumisani", help: "Thuso", welcome: "NDAA, AMINA 👋", headline: "Lwendo lu ri sendedza tsini.", subheadline: "Tshimbilani, rumelani dziphasela ni ḓivhe Afrika Tshipembe.", network: "Netiweke ya ndingedzo", heroTitle: "Ḓivhani Afrika Tshipembe, lwendo luthihi nga tshifhinga.", heroText: "Vhambedzani ndila, nanga tshidulo ni bade nga ndila ine na funa.", findTrip: "⌕ Toda lwendo", sendParcel: "＋ Rumela phasela", searchTitle: "Ni ṱoḓa u ya ngafhi?", searchCaption: "Zwo leluwa • zwo tsireledzea • zwo ṱumanywa", oneWay: "U ya", returnTrip: "U ya na u vhuya", multiHop: "Ndila nnzhi", from: "U BVA", to: "U YA", date: "DATUMU YA LWENDO", passengers: "Vhaendi", search: "Toda ↗", myTickets: "Thikithi dzanga", readyTravel: "Vho lugela u tshimbila", saved: "U vhulunga", partnerSavings: "Nga zwipfukedzo zwa vhashumisani", parcel: "Dziphasela", inTransit: "Ndilani", popularRoutes: "Ndila dzi funeswaho", seeAll: "Vhonani dzoṱhe →", routeDeals: "Mbuyelo dza ndila", explore: "Tola", bookShort: "Vhukha", ticketsShort: "Thikithi", parcelsShort: "Dziphasela", businessShort: "Vhubindudzi" },
+      ss: { passenger: "UMHAMBI", home: "Ekhaya", book: "Bhukha luhambo", tickets: "Emathikithi ami", parcels: "Emaphasela nemthwalo", deals: "Tinzuzo endleleni", ecosystem: "INETHIWEKHI", company: "Umsebenti webhasi", partner: "Balingani", help: "Lusito", welcome: "SAWUBONA, AMINA 👋", headline: "Luhambo lusisondeza.", subheadline: "Hamba, tfumela emaphasela futsi wati iNingizimu Afrika.", network: "Inethiwekhi yekuhlola", heroTitle: "Hlola iNingizimu Afrika, luhambo lunye ngesikhatsi.", heroText: "Catsanisa tindlela, khetha sihlalo bese ukhokha ngendlela loyifunako.", findTrip: "⌕ Tfola luhambo", sendParcel: "＋ Tfumela liphasela", searchTitle: "Ufuna kuya kuphi?", searchCaption: "Kulula • kuphephile • kuxhunyiwe", oneWay: "Kuhamba kuphela", returnTrip: "Kuhamba nekubuya", multiHop: "Tindlela letinyenti", from: "USUKA", to: "KUYA", date: "LUSUKU LWEKUHAMBA", passengers: "BAGIBELI", search: "Sesha ↗", myTickets: "Emathikithi ami", readyTravel: "Kulungele kuhamba", saved: "Konga", partnerSavings: "Ngetinzuzo tebalingani", parcel: "Emaphasela", inTransit: "Endleleni", popularRoutes: "Tindlela letatiwako", seeAll: "Bona konkhe →", routeDeals: "Tinzuzo endleleni", explore: "Hlola", bookShort: "Bhukha", ticketsShort: "Emathikithi", parcelsShort: "Emaphasela", businessShort: "Libhizinisi" },
+      nr: { passenger: "UMHAMBI", home: "Ekhaya", book: "Bhukha uhambo", tickets: "Amatikhethi ami", parcels: "Amaphasela nomthwalo", deals: "Iinzuzo endleleni", ecosystem: "ITHUNGELWANO", company: "Umsebenzi webhesi", partner: "Abalingani", help: "Isizo", welcome: "LOTJHA, AMINA 👋", headline: "Uhambo lusisondeza.", subheadline: "Khamba, thumela amaphasela begodu ufumane iSewula Afrika.", network: "Ithungelwano lokuhlola", heroTitle: "Hlola iSewula Afrika, uhambo olulodwa ngesikhathi.", heroText: "Madanisa iindlela, khetha isihlalo begodu ubhadale ngendlela oyithandako.", findTrip: "⌕ Funa uhambo", sendParcel: "＋ Thumela iphasela", searchTitle: "Ufuna ukuya kuphi?", searchCaption: "Kulula • kuphephile • kuxhunyiwe", oneWay: "Ukuya kuphela", returnTrip: "Ukuya nokubuya", multiHop: "Iindlela ezinengi", from: "USUKA", to: "INDAWO", date: "ILANGA LOHAMBO", passengers: "ABAKHAMBI", search: "Funa ↗", myTickets: "Amatikhethi ami", readyTravel: "Ulungele ukukhamba", saved: "Ukonga", partnerSavings: "Ngeenzuzo zabalingani", parcel: "Amaphasela", inTransit: "Endleleni", popularRoutes: "Iindlela ezithandwako", seeAll: "Bona zoke →", routeDeals: "Iinzuzo zendlela", explore: "Hlola", bookShort: "Bhukha", ticketsShort: "Amatikhethi", parcelsShort: "Amaphasela", businessShort: "Ibhizinisi" },
+      sn: { passenger: "MUFAMBI", home: "Kumba", book: "Bhuka rwendo", tickets: "Matikiti angu", parcels: "Mapasuru nemitoro", deals: "Zvidzikiso munzira", ecosystem: "NETWORK", company: "Kambani yemabhazi", partner: "Vadyidzani", help: "Rubatsiro", welcome: "MHORO, AMINA 👋", headline: "Rwendo runotiswededza pedyo.", subheadline: "Famba, tumira mapasuru uye uzive South Africa.", network: "Network yekuedza", heroTitle: "Ongorora South Africa, rwendo rumwe panguva.", heroText: "Enzanisa nzira, sarudza chigaro uye bhadhara nenzira yaunoda.", findTrip: "⌕ Tsvaga rwendo", sendParcel: "＋ Tumira pasuru", searchTitle: "Unoda kuenda kupi?", searchCaption: "Zviri nyore • zvakachengeteka • zvakabatana", oneWay: "Kuenda chete", returnTrip: "Kuenda nekudzoka", multiHop: "Nzira dzakawanda", from: "KUBVA", to: "KUNOENDA", date: "ZUVA RWERWENDO", passengers: "VAFAMBI", search: "Tsvaga ↗", myTickets: "Matikiti angu", readyTravel: "Wagadzirira kufamba", saved: "Mari yakachengetwa", partnerSavings: "Kuburikidza nezvibvumirano zvevadyidzani", parcel: "Mapasuru", inTransit: "Zviri munzira", popularRoutes: "Nzira dzinofarirwa", seeAll: "Ona zvese →", routeDeals: "Zvakanakira rwendo rwako", explore: "Ongorora", bookShort: "Bhuka", ticketsShort: "Matikiti", parcelsShort: "Mapasuru", businessShort: "Bhizinesi" }
     };
-    let currentBus = "UTB — Confort Plus", currentPrice = "4 500 FCFA", selectedSeat = null, bookingCount = 2, activeRouteFrom = "Abidjan", activeRouteTo = "Yamoussoukro";
+    let currentBus = "Intercape — Comfort", currentPrice = "R 180", selectedSeat = null, bookingCount = 2, activeRouteFrom = "Johannesburg", activeRouteTo = "Cape Town";
     function go(page, el) { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); const target = document.getElementById('page-' + page); if (target) target.classList.add('active'); document.querySelectorAll('.nav,.mobile-nav button').forEach(b => b.classList.toggle('active', b.dataset.page === page)); window.scrollTo({ top: 0, behavior: 'smooth' }); }
     function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => t.classList.remove('show'), 3300) }
     function setTripType(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active')); btn.classList.add('active'); if (btn.textContent.includes('Multi')) toast('Mode multi-trajets sélectionné — ajout des étapes disponible dans la version complète.') }
-    function searchTrips() { const f = document.getElementById('from')?.value || document.getElementById('bookFrom')?.value || 'Abidjan'; const t = document.getElementById('to')?.value || document.getElementById('bookTo')?.value || 'Yamoussoukro'; if (f === t) { toast('Choisissez deux villes différentes.'); return } activeRouteFrom = f; activeRouteTo = t; document.getElementById('bookFrom').value = f; document.getElementById('bookTo').value = t; document.querySelectorAll('#tripResults .route-card').forEach((card, i) => { const names = card.querySelector('.route-line'); if (names) { names.innerHTML = '<span>' + f + '</span><div class="line"></div><span>' + t + '</span>' } }); document.getElementById('searchResultLabel').textContent = '3 options · ' + f + ' → ' + t; go('book'); toast('Trajets de démonstration affichés pour ' + f + ' → ' + t + '.') }
-    function bookRoute(f, t, p) { activeRouteFrom = f; activeRouteTo = t; document.getElementById('bookFrom').value = f; document.getElementById('bookTo').value = t; go('book'); toast('Choisissez un départ pour continuer.') }
+    function searchTrips() { const f = document.getElementById('from')?.value || document.getElementById('bookFrom')?.value || 'Johannesburg'; const t = document.getElementById('to')?.value || document.getElementById('bookTo')?.value || 'Cape Town'; if (f === t) { toast('Please choose two different cities.'); return } activeRouteFrom = f; activeRouteTo = t; document.getElementById('bookFrom').value = f; document.getElementById('bookTo').value = t; document.querySelectorAll('#tripResults .route-card').forEach((card, i) => { const names = card.querySelector('.route-line'); if (names) { names.innerHTML = '<span>' + f + '</span><div class="line"></div><span>' + t + '</span>' } }); document.getElementById('searchResultLabel').textContent = '3 options · ' + f + ' → ' + t; go('book'); toast('Trajets de démonstration affichés pour ' + f + ' → ' + t + '.') }
+    function bookRoute(f, t, p) { activeRouteFrom = f; activeRouteTo = t; document.getElementById('bookFrom').value = f; document.getElementById('bookTo').value = t; go('book'); toast('Choose a departure to continue.') }
     function startBooking(bus, price) { currentBus = bus; currentPrice = price; selectedSeat = null; document.getElementById('selectedBus').textContent = bus; const map = document.getElementById('seatMap'); map.innerHTML = ''; for (let i = 1; i <= 20; i++) { if (i % 4 === 3) { const aisle = document.createElement('div'); aisle.className = 'seat aisle'; map.appendChild(aisle) } const n = String(i).padStart(2, '0'); const b = document.createElement('button'); b.className = 'seat' + ([3, 7, 14, 18].includes(i) ? ' taken' : ''); b.textContent = n + (i % 2 ? 'A' : 'B'); if (!b.classList.contains('taken')) b.onclick = () => { map.querySelectorAll('.seat').forEach(s => s.classList.remove('selected')); b.classList.add('selected'); selectedSeat = b.textContent; document.getElementById('seatNotice').textContent = 'Siège sélectionné : ' + selectedSeat + ' · ' + currentPrice }; map.appendChild(b) } document.getElementById('seatBooking').style.display = 'block'; document.getElementById('seatBooking').scrollIntoView({ behavior: 'smooth', block: 'start' }) }
-    function openPayment() { if (!selectedSeat) { toast('Veuillez choisir un siège avant de continuer.'); return } if (!document.getElementById('travelerName').value.trim()) { toast('Veuillez saisir le nom du voyageur.'); return } document.getElementById('paymentSummary').textContent = currentBus + ' · ' + activeRouteFrom + ' → ' + activeRouteTo + ' · Siège ' + selectedSeat + ' · ' + currentPrice; document.getElementById('paymentModal').classList.add('show') }
+    function openPayment() { if (!selectedSeat) { toast('Please choose a seat before continuing.'); return } if (!document.getElementById('travelerName').value.trim()) { toast('Please enter the passenger name.'); return } document.getElementById('paymentSummary').textContent = currentBus + ' · ' + activeRouteFrom + ' → ' + activeRouteTo + ' · Siège ' + selectedSeat + ' · ' + currentPrice; document.getElementById('paymentModal').classList.add('show') }
     function closePayment() { document.getElementById('paymentModal').classList.remove('show') }
-    function confirmPayment() { closePayment(); bookingCount++; document.getElementById('ticketCount').textContent = bookingCount; const method = document.querySelector('input[name="payment"]:checked').value; const name = document.getElementById('travelerName').value || 'Voyageur'; const card = document.createElement('div'); card.className = 'ticket'; card.style.marginBottom = '14px'; card.innerHTML = '<div class="ticket-head"><div><strong>CI VOYAGE <span style="color:var(--orange)">/ Billet démo</span></strong><p style="margin:5px 0 0;font-size:10px;color:#888">Référence : CIV-' + Math.floor(1000 + Math.random() * 8999) + '-DEMO</p></div><div class="qr"></div></div><div class="ticket-route"><div><small>DÉPART</small><strong>' + activeRouteFrom + '</strong></div><span style="color:var(--orange)">━━━━ 🚌 ━━━━</span><div style="text-align:right"><small>ARRIVÉE</small><strong>' + activeRouteTo + '</strong></div></div><div class="ticket-info"><div><span>VOYAGEUR</span><b>' + name + '</b></div><div><span>SIÈGE</span><b>' + selectedSeat + '</b></div><div><span>TRANSPORTEUR</span><b>' + currentBus + '</b></div><div><span>PRIX</span><b>' + currentPrice + '</b></div><div><span>PAIEMENT</span><b>' + method + '</b></div><div><span>STATUT DÉMO</span><b class="badge orange">Simulé</b></div></div><div class="notice">Réservation de démonstration uniquement : aucun billet réel émis, aucun paiement encaissé.</div>'; document.getElementById('ticketList').prepend(card); go('tickets'); toast('Parcours de réservation terminé en mode démo. Aucun paiement réel effectué.') }
-    function createParcel() { const r = document.getElementById('recipient').value.trim(); const phone = document.getElementById('recipientPhone').value.trim(); if (!r || !phone) { toast('Veuillez saisir le nom et le téléphone du destinataire.'); return } const id = 'CIV-' + Math.floor(1000 + Math.random() * 8999); document.getElementById('trackingId').value = id; document.getElementById('trackingResult').textContent = id + ' · Demande créée · ' + document.getElementById('parcelFrom').value + ' → ' + document.getElementById('parcelTo').value + ' · ' + document.getElementById('parcelType').value + '. Statut simulé : en attente de dépôt.'; toast('Envoi créé en mode démonstration : ' + id); document.getElementById('trackingResult').scrollIntoView({ behavior: 'smooth', block: 'center' }) }
-    function trackParcel() { const id = document.getElementById('trackingId').value.trim(); document.getElementById('trackingResult').textContent = id + ' · Pris en charge → En transit → Livraison prévue. Statuts et notifications simulés pour la démonstration.'; toast('Résultat de suivi de démonstration affiché.') }
+    function confirmPayment() { closePayment(); bookingCount++; document.getElementById('ticketCount').textContent = bookingCount; const method = document.querySelector('input[name="payment"]:checked').value; const name = document.getElementById('travelerName').value || 'Voyageur'; const card = document.createElement('div'); card.className = 'ticket'; card.style.marginBottom = '14px'; card.innerHTML = '<div class="ticket-head"><div><strong>CI VOYAGE <span style="color:var(--orange)">/ Demo ticket</span></strong><p style="margin:5px 0 0;font-size:10px;color:#888">Reference: CIV-' + Math.floor(1000 + Math.random() * 8999) + '-DEMO</p></div><div class="qr"></div></div><div class="ticket-route"><div><small>FROM</small><strong>' + activeRouteFrom + '</strong></div><span style="color:var(--orange)">━━━━ 🚌 ━━━━</span><div style="text-align:right"><small>ARRIVAL</small><strong>' + activeRouteTo + '</strong></div></div><div class="ticket-info"><div><span>PASSENGER</span><b>' + name + '</b></div><div><span>SEAT</span><b>' + selectedSeat + '</b></div><div><span>OPERATOR</span><b>' + currentBus + '</b></div><div><span>PRICE</span><b>' + currentPrice + '</b></div><div><span>PAYMENT</span><b>' + method + '</b></div><div><span>DEMO STATUS</span><b class="badge orange">Simulated</b></div></div><div class="notice">Demo booking only: no real ticket issued and no payment collected.</div>'; document.getElementById('ticketList').prepend(card); go('tickets'); toast('Demo booking flow completed. No real payment was made.') }
+    function createParcel() { const r = document.getElementById('recipient').value.trim(); const phone = document.getElementById('recipientPhone').value.trim(); if (!r || !phone) { toast('Please enter the recipient name and phone number.'); return } const id = 'CIV-' + Math.floor(1000 + Math.random() * 8999); document.getElementById('trackingId').value = id; document.getElementById('trackingResult').textContent = id + ' · Request created · ' + document.getElementById('parcelFrom').value + ' → ' + document.getElementById('parcelTo').value + ' · ' + document.getElementById('parcelType').value + '. Demo status: waiting for drop-off.'; toast('Demo delivery created: ' + id); document.getElementById('trackingResult').scrollIntoView({ behavior: 'smooth', block: 'center' }) }
+    function trackParcel() { const id = document.getElementById('trackingId').value.trim(); document.getElementById('trackingResult').textContent = id + ' · Collected → In transit → Delivery expected. Status and notifications are simulated.'; toast('Demo tracking result displayed.') }
     function filterDeals() { const v = document.getElementById('dealFilter').value; document.querySelectorAll('.deal-item').forEach(el => el.style.display = (v === 'all' || el.dataset.category === v) ? 'block' : 'none') }
     function redeem(name) { toast('Offre sélectionnée : ' + name + '. En production, le QR du billet validera la remise.') }
-    function choosePlan(plan, capacity) { toast('Plan ' + plan + ' sélectionné (' + capacity + '). Le paiement et l’activation seront connectés en production.'); document.getElementById('paymentSummary').textContent = 'Abonnement transporteur ' + plan + ' — prix à définir'; document.getElementById('paymentModal').classList.add('show') }
+    function choosePlan(plan, capacity) { toast('Plan ' + plan + ' sélectionné (' + capacity + '). Le paiement et l’activation seront connectés en production.'); document.getElementById('paymentSummary').textContent = 'Bus operator subscription ' + plan + ' — price to be confirmed'; document.getElementById('paymentModal').classList.add('show') }
     function choosePartnerPlan(plan) { toast('Plan partenaire ' + plan + ' sélectionné. Les tarifs doivent être confirmés par CI Voyage.') }
-    function registerPartner() { const n = document.getElementById('partnerName').value.trim(); if (!n) { toast('Veuillez saisir le nom de votre établissement.'); return } toast('Fiche de démonstration créée pour ' + n + '. Aucune donnée envoyée au serveur.') }
-    function changeLanguage() { const lang = document.getElementById('language').value; const dict = i18n[lang] || i18n.fr; document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (dict[key]) el.textContent = dict[key] }); document.documentElement.lang = lang; toast('Langue de l’interface : ' + document.getElementById('language').selectedOptions[0].textContent + '. Certains contenus restent en français dans cette démo.') }
+    function registerPartner() { const n = document.getElementById('partnerName').value.trim(); if (!n) { toast('Please enter your business name.'); return } toast('Demo profile created for ' + n + '. No data was sent to a server.') }
+    function changeLanguage() { const lang = document.getElementById('language').value; const dict = i18n[lang] || i18n.en; document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (dict[key]) el.textContent = dict[key] }); document.documentElement.lang = lang; toast('Interface language: ' + document.getElementById('language').selectedOptions[0].textContent + '. Some demo content may remain in English.') }
     document.addEventListener('DOMContentLoaded', () => { const d = new Date(); d.setDate(d.getDate() + 1); const iso = d.toISOString().slice(0, 10); document.getElementById('date').value = iso; document.getElementById('bookDate').value = iso; document.getElementById('date').min = new Date().toISOString().slice(0, 10); document.getElementById('bookDate').min = new Date().toISOString().slice(0, 10) });
   </script>
 </body>
