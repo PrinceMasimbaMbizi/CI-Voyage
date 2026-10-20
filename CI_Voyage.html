@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f26a21">
+  <title>CI Voyage — La mobilité africaine, simplement</title>
+  <style>
+    :root {
+      --orange: #f26a21;
+      --orange2: #ff8b45;
+      --ink: #171717;
+      --muted: #6b7280;
+      --line: #ececec;
+      --paper: #fff;
+      --soft: #fff4ec;
+      --green: #138a52;
+      --shadow: 0 12px 35px rgba(22, 22, 22, .08)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #f7f7f8
+    }
+
+    button,
+    input,
+    select {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    .app {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 100vh;
+      background: #f7f7f8
+    }
+
+    .topbar {
+      height: 76px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 21px;
+      letter-spacing: -.7px
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--orange);
+      color: white;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      font-size: 21px;
+      box-shadow: 0 7px 16px #f26a2140
+    }
+
+    .brand small {
+      display: block;
+      color: #8a8a8a;
+      font-size: 10px;
+      letter-spacing: 1.6px;
+      margin-top: 1px
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .language {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: white;
+      color: #333;
+      max-width: 165px
+    }
+
+    .avatar {
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      background: #171717;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 225px 1fr;
+      min-height: calc(100vh - 76px)
+    }
+
+    .sidebar {
+      background: #fff;
+      border-right: 1px solid var(--line);
+      padding: 24px 14px
+    }
+
+    .nav-label {
+      font-size: 10px;
+      color: #9b9b9b;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 0 12px;
+      margin: 8px 0 10px
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #686868;
+      padding: 13px 12px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 650;
+      margin-bottom: 4px
+    }
+
+    .nav .ico {
+      font-size: 18px;
+      width: 22px;
+      text-align: center
+    }
+
+    .nav.active {
+      background: var(--soft);
+      color: var(--orange);
+      font-weight: 800
+    }
+
+    .side-card {
+      margin: 28px 4px 0;
+      background: #171717;
+      color: #fff;
+      padding: 16px;
+      border-radius: 16px
+    }
+
+    .side-card strong {
+      font-size: 13px
+    }
+
+    .side-card p {
+      font-size: 11px;
+      color: #c8c8c8;
+      line-height: 1.6
+    }
+
+    .side-card button {
+      background: var(--orange);
+      color: white;
+      border: 0;
+      border-radius: 9px;
+      padding: 10px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      width: 100%
+    }
+
+    .main {
+      padding: 27px 30px 90px;
+      min-width: 0
+    }
+
+    .welcome {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 23px
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      color: var(--orange);
+      font-weight: 850;
+      letter-spacing: 1.5px;
+      text-transform: uppercase
+    }
+
+    .welcome h1 {
+      font-size: 29px;
+      letter-spacing: -1px;
+      margin: 7px 0 5px
+    }
+
+    .welcome p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0
+    }
+
+    .pill {
+      background: #e8f7ee;
+      color: var(--green);
+      border-radius: 99px;
+      padding: 8px 11px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #f26a21, #ff8b45);
+      border-radius: 22px;
+      padding: 25px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 28px #f26a2126;
+      margin-bottom: 22px
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 35px solid #ffffff20;
+      border-radius: 50%;
+      right: -70px;
+      top: -100px
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 20px solid #ffffff16;
+      border-radius: 50%;
+      right: 105px;
+      bottom: -115px
+    }
+
+    .hero h2 {
+      font-size: 23px;
+      max-width: 460px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero p {
+      font-size: 12px;
+      line-height: 1.6;
+      max-width: 450px;
+      color: #fff0e7;
+      margin: 0 0 19px;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 12px 15px;
+      font-weight: 800;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--orange)
+    }
+
+    .btn-dark {
+      background: #171717;
+      color: #fff
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: white
+    }
+
+    .btn-light {
+      background: #fff2e9;
+      color: var(--orange)
+    }
+
+    .btn-outline {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      color: #333
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 23px 0 13px
+    }
+
+    .section-head h2 {
+      font-size: 16px;
+      margin: 0;
+      letter-spacing: -.3px
+    }
+
+    .section-head span {
+      font-size: 11px;
+      color: var(--muted)
+    }
+
+    .search-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 19px;
+      box-shadow: var(--shadow)
+    }
+
+    .trip-toggle {
+      display: flex;
+      background: #f5f5f5;
+      border-radius: 11px;
+      padding: 4px;
+      width: max-content;
+      margin-bottom: 16px
+    }
+
+    .trip-toggle button {
+      border: 0;
+      background: transparent;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 750;
+      color: #777
+    }
+
+    .trip-toggle button.active {
+      background: white;
+      color: var(--orange);
+      box-shadow: 0 2px 7px #0000000c
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr auto;
+      gap: 10px;
+      align-items: end
+    }
+
+    .field label {
+      display: block;
+      font-size: 10px;
+      color: #777;
+      font-weight: 800;
+      margin: 0 0 7px
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      border: 1px solid #e8e8e8;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 10px;
+      outline: none;
+      min-width: 0;
+      font-size: 12px;
+      color: #242424
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px #f26a2118
+    }
+
+    .search-submit {
+      height: 42px;
+      white-space: nowrap
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      margin: 18px 0
+    }
+
+    .stat {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 16px
+    }
+
+    .stat-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #777;
+      font-size: 11px
+    }
+
+    .stat-icon {
+      width: 31px;
+      height: 31px;
+      background: var(--soft);
+      color: var(--orange);
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      font-size: 15px
+    }
+
+    .stat strong {
+      font-size: 23px;
+      display: block;
+      margin: 10px 0 3px;
+      letter-spacing: -.7px
+    }
+
+    .stat small {
+      font-size: 10px;
+      color: #858585
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 15px
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 18px;
+      min-width: 0
+    }
+
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px
+    }
+
+    .panel-title h3 {
+      font-size: 14px;
+      margin: 0
+    }
+
+    .text-link {
+      border: 0;
+      background: none;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800
+    }
+
+    .route-card {
+      border: 1px solid #eee;
+      border-radius: 13px;
+      padding: 14px;
+      margin-bottom: 10px
+    }
+
+    .route-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px
+    }
+
+    .route-top strong {
+      font-size: 13px
+    }
+
+    .route-top span {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--orange)
+    }
+
+    .route-sub {
+      font-size: 10px;
+      color: #888;
+      margin-top: 4px
+    }
+
+    .route-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 14px 0 11px;
+      font-size: 11px;
+      font-weight: 800
+    }
+
+    .route-line .line {
+      height: 1px;
+      background: #e5e5e5;
+      flex: 1;
+      position: relative
+    }
+
+    .route-line .line:after {
+      content: "🚌";
+      position: absolute;
+      left: 45%;
+      top: -11px;
+      background: white;
+      padding: 0 4px;
+      font-size: 14px
+    }
+
+    .route-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px
+    }
+
+    .seats {
+      font-size: 10px;
+      color: #777
+    }
+
+    .seats b {
+      color: var(--green)
+    }
+
+    .route-bottom .btn {
+      padding: 9px 12px;
+      font-size: 10px
+    }
+
+    .offer {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0
+    }
+
+    .offer:last-child {
+      border-bottom: 0
+    }
+
+    .offer-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #fff0e4;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      flex-shrink: 0
+    }
+
+    .offer strong {
+      font-size: 12px;
+      display: block;
+      margin: 2px 0 5px
+    }
+
+    .offer p {
+      font-size: 10px;
+      color: #777;
+      margin: 0 0 7px
+    }
+
+    .discount {
+      font-size: 10px;
+      font-weight: 900;
+      color: var(--green)
+    }
+
+    .page {
+      display: none
+    }
+
+    .page.active {
+      display: block
+    }
+
+    .notice {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #fff5e9;
+      border: 1px solid #ffe2cb;
+      color: #7d421d;
+      font-size: 11px;
+      line-height: 1.6;
+      margin: 12px 0
+    }
+
+    .tabs {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 16px
+    }
+
+    .tabs button {
+      border: 1px solid #e8e8e8;
+      background: white;
+      border-radius: 9px;
+      padding: 9px 12px;
+      font-size: 11px;
+      font-weight: 750;
+      color: #666
+    }
+
+    .tabs button.active {
+      background: #171717;
+      color: #fff;
+      border-color: #171717
+    }
+
+    .table-wrap {
+      overflow-x: auto
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      min-width: 500px
+    }
+
+    .data-table th {
+      text-align: left;
+      color: #8a8a8a;
+      font-weight: 750;
+      background: #fafafa;
+      padding: 12px
+    }
+
+    .data-table td {
+      padding: 13px 12px;
+      border-bottom: 1px solid #f0f0f0
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 8px;
+      border-radius: 99px;
+      font-size: 9px;
+      font-weight: 850;
+      background: #e8f7ee;
+      color: #138a52
+    }
+
+    .badge.orange {
+      background: #fff0e5;
+      color: #d95c16
+    }
+
+    .badge.gray {
+      background: #f0f0f0;
+      color: #666
+    }
+
+    .form-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 20px
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px
+    }
+
+    .form-grid .full {
+      grid-column: 1/-1
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: 16px
+    }
+
+    .seat-map {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      max-width: 270px;
+      margin: 18px 0
+    }
+
+    .seat {
+      padding: 12px 4px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 11px;
+      font-weight: 800
+    }
+
+    .seat.selected {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white
+    }
+
+    .seat.taken {
+      background: #eee;
+      color: #aaa;
+      border-color: #eee;
+      cursor: not-allowed
+    }
+
+    .seat.aisle {
+      visibility: hidden
+    }
+
+    .ticket {
+      border: 1px dashed #f2a06d;
+      border-radius: 16px;
+      padding: 18px;
+      background: linear-gradient(135deg, #fff9f4, #fff);
+      max-width: 520px
+    }
+
+    .ticket-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #edc6ae;
+      padding-bottom: 13px
+    }
+
+    .ticket-head strong {
+      font-size: 15px
+    }
+
+    .qr {
+      width: 76px;
+      height: 76px;
+      background: repeating-conic-gradient(#171717 0 25%, white 0 50%) 50% / 12px 12px;
+      border: 6px solid white;
+      outline: 1px solid #ddd;
+      border-radius: 5px
+    }
+
+    .ticket-route {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0
+    }
+
+    .ticket-route strong {
+      font-size: 18px
+    }
+
+    .ticket-route small {
+      font-size: 10px;
+      color: #888;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .ticket-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px
+    }
+
+    .ticket-info span {
+      display: block;
+      color: #888;
+      font-size: 10px;
+      margin-bottom: 5px
+    }
+
+    .ticket-info b {
+      font-size: 11px
+    }
+
+    .mini-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px
+    }
+
+    .mini-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 15px
+    }
+
+    .mini-card .big {
+      font-size: 23px;
+      font-weight: 900;
+      margin: 8px 0
+    }
+
+    .mini-card p {
+      font-size: 10px;
+      color: #777;
+      margin: 0
+    }
+
+    .mobile-nav {
+      display: none
+    }
+
+    .toast {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 60;
+      background: #171717;
+      color: white;
+      border-radius: 13px;
+      padding: 14px 17px;
+      font-size: 12px;
+      box-shadow: var(--shadow);
+      max-width: 320px;
+      display: none
+    }
+
+    .toast.show {
+      display: block;
+      animation: pop .2s ease
+    }
+
+    @keyframes pop {
+      from {
+        transform: translateY(8px);
+        opacity: 0
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1
+      }
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: #0008;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      padding: 16px
+    }
+
+    .modal-backdrop.show {
+      display: flex
+    }
+
+    .modal {
+      background: white;
+      border-radius: 20px;
+      padding: 23px;
+      width: min(100%, 460px);
+      box-shadow: 0 20px 60px #0003
+    }
+
+    .modal h2 {
+      font-size: 20px;
+      margin: 0 0 7px
+    }
+
+    .modal p {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.6
+    }
+
+    .modal-close {
+      float: right;
+      border: 0;
+      background: #f4f4f4;
+      border-radius: 9px;
+      padding: 7px 10px
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 12px;
+      margin: 9px 0;
+      font-size: 12px;
+      font-weight: 750
+    }
+
+    .payment-option input {
+      accent-color: var(--orange)
+    }
+
+    .payment-option span {
+      margin-left: auto;
+      color: #888;
+      font-size: 10px
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 26px
+    }
+
+    @media(max-width:900px) {
+      .layout {
+        grid-template-columns: 1fr
+      }
+
+      .sidebar {
+        display: none
+      }
+
+      .main {
+        padding: 23px 22px 100px
+      }
+
+      .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        background: #fff;
+        border-top: 1px solid var(--line);
+        padding: 7px 5px calc(7px + env(safe-area-inset-bottom));
+        justify-content: space-around;
+        box-shadow: 0 -6px 20px #00000008
+      }
+
+      .mobile-nav button {
+        border: 0;
+        background: transparent;
+        color: #858585;
+        font-size: 9px;
+        font-weight: 750;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 5px 7px
+      }
+
+      .mobile-nav button span {
+        font-size: 19px
+      }
+
+      .mobile-nav button.active {
+        color: var(--orange)
+      }
+
+      .search-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .search-submit {
+        grid-column: 1/-1
+      }
+
+      .two-col {
+        grid-template-columns: 1fr
+      }
+
+      .topbar {
+        padding: 0 20px
+      }
+
+      .stats {
+        gap: 10px
+      }
+
+      .stat {
+        padding: 13px
+      }
+
+      .stat strong {
+        font-size: 20px
+      }
+    }
+
+    @media(max-width:520px) {
+      .topbar {
+        height: 65px;
+        padding: 0 14px
+      }
+
+      .brand {
+        font-size: 18px
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px
+      }
+
+      .brand small {
+        font-size: 8px
+      }
+
+      .top-actions {
+        gap: 7px
+      }
+
+      .language {
+        font-size: 10px;
+        padding: 9px 6px;
+        max-width: 115px
+      }
+
+      .avatar {
+        width: 34px;
+        height: 34px
+      }
+
+      .main {
+        padding: 20px 14px 96px
+      }
+
+      .welcome {
+        display: block
+      }
+
+      .welcome h1 {
+        font-size: 25px
+      }
+
+      .welcome .pill {
+        display: inline-block;
+        margin-top: 12px
+      }
+
+      .hero {
+        padding: 21px 18px;
+        border-radius: 18px
+      }
+
+      .hero h2 {
+        font-size: 22px
+      }
+
+      .stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px
+      }
+
+      .stat {
+        padding: 10px;
+        border-radius: 12px
+      }
+
+      .stat-top {
+        font-size: 9px;
+        display: block
+      }
+
+      .stat-icon {
+        width: 26px;
+        height: 26px;
+        margin-bottom: 8px
+      }
+
+      .stat strong {
+        font-size: 17px;
+        margin: 8px 0 4px
+      }
+
+      .stat small {
+        font-size: 9px;
+        line-height: 1.4;
+        display: block
+      }
+
+      .search-card {
+        padding: 14px
+      }
+
+      .search-grid {
+        gap: 9px
+      }
+
+      .field input,
+      .field select {
+        padding: 11px 8px;
+        font-size: 11px
+      }
+
+      .section-head h2 {
+        font-size: 15px
+      }
+
+      .panel {
+        padding: 14px
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr
+      }
+
+      .form-grid .full {
+        grid-column: auto
+      }
+
+      .mini-cards {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .mini-card:last-child {
+        grid-column: 1/-1
+      }
+
+      .ticket-info {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .route-top strong {
+        font-size: 12px
+      }
+
+      .footer-note {
+        padding-bottom: 8px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">↗</div>
+        <div>CI VOYAGE<small>LA MOBILITÉ SANS FRONTIÈRES</small></div>
+      </div>
+      <div class="top-actions">
+        <select class="language" id="language" aria-label="Langue" onchange="changeLanguage()">
+          <option value="fr">🇫🇷 Français</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="sw">🇹🇿 Kiswahili</option>
+          <option value="ha">🇳🇬 Hausa</option>
+          <option value="yo">🇳🇬 Yorùbá</option>
+          <option value="am">🇪🇹 አማርኛ</option>
+          <option value="pt">🇦🇴 Português</option>
+        </select>
+        <div class="avatar">A</div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="nav-label" data-i18n="passenger">VOYAGEUR</div>
+        <button class="nav active" data-page="home" onclick="go('home',this)"><span class="ico">⌂</span><span
+            data-i18n="home">Accueil</span></button>
+        <button class="nav" data-page="book" onclick="go('book',this)"><span class="ico">⌕</span><span
+            data-i18n="book">Réserver un trajet</span></button>
+        <button class="nav" data-page="tickets" onclick="go('tickets',this)"><span class="ico">▣</span><span
+            data-i18n="tickets">Mes billets</span></button>
+        <button class="nav" data-page="parcels" onclick="go('parcels',this)"><span class="ico">▤</span><span
+            data-i18n="parcels">Colis & bagages</span></button>
+        <button class="nav" data-page="deals" onclick="go('deals',this)"><span class="ico">✦</span><span
+            data-i18n="deals">Offres sur la route</span></button>
+        <div class="nav-label" style="margin-top:24px" data-i18n="ecosystem">ÉCOSYSTÈME</div>
+        <button class="nav" data-page="company" onclick="go('company',this)"><span class="ico">▦</span><span
+            data-i18n="company">Espace transporteur</span></button>
+        <button class="nav" data-page="partner" onclick="go('partner',this)"><span class="ico">♧</span><span
+            data-i18n="partner">Espace partenaire</span></button>
+        <button class="nav" data-page="help" onclick="go('help',this)"><span class="ico">◉</span><span
+            data-i18n="help">Aide & accessibilité</span></button>
+        <div class="side-card"><strong>Votre prochain voyage ?</strong>
+          <p>Réservez en quelques étapes et gardez votre billet disponible hors connexion.</p><button
+            onclick="go('book')">Trouver un trajet →</button>
+        </div>
+      </aside>
+      <main class="main">
+        <section class="page active" id="page-home">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow" data-i18n="welcome">BONJOUR, AMINA 👋</div>
+              <h1 data-i18n="headline">Le voyage vous rapproche.</h1>
+              <p data-i18n="subheadline">Voyagez, envoyez et découvrez l’Afrique autrement.</p>
+            </div>
+            <div class="pill">● <span data-i18n="network">Réseau de démonstration</span></div>
+          </div>
+          <div class="hero">
+            <h2 data-i18n="heroTitle">Une Afrique. Des milliers de destinations.</h2>
+            <p data-i18n="heroText">Comparez les trajets, choisissez votre siège et payez avec votre moyen préféré.
+              Votre voyage, dans votre poche.</p>
+            <div class="hero-buttons"><button class="btn btn-white" onclick="go('book')" data-i18n="findTrip">⌕ Trouver
+                un trajet</button><button class="btn btn-dark" onclick="go('parcels')" data-i18n="sendParcel">＋ Envoyer
+                un colis</button></div>
+          </div>
+          <div class="section-head">
+            <h2 data-i18n="searchTitle">Où souhaitez-vous aller ?</h2><span data-i18n="searchCaption">Simple • sûr •
+              connecté</span>
+          </div>
+          <div class="search-card">
+            <div class="trip-toggle"><button class="active" onclick="setTripType(this)" data-i18n="oneWay">Aller
+                simple</button><button onclick="setTripType(this)" data-i18n="returnTrip">Aller-retour</button><button
+                onclick="setTripType(this)" data-i18n="multiHop">Multi-trajets</button></div>
+            <div class="search-grid">
+              <div class="field"><label data-i18n="from">DÉPART</label><select id="from">
+                  <option>Abidjan</option>
+                  <option>Yamoussoukro</option>
+                  <option>Accra</option>
+                  <option>Lomé</option>
+                  <option>Cotonou</option>
+                  <option>Ouagadougou</option>
+                  <option>Dakar</option>
+                  <option>Lagos</option>
+                  <option>Nairobi</option>
+                  <option>Abuja</option>
+                </select></div>
+              <div class="field"><label data-i18n="to">DESTINATION</label><select id="to">
+                  <option>Yamoussoukro</option>
+                  <option>Abidjan</option>
+                  <option>Accra</option>
+                  <option>Lomé</option>
+                  <option>Cotonou</option>
+                  <option>Ouagadougou</option>
+                  <option>Dakar</option>
+                  <option>Lagos</option>
+                  <option>Nairobi</option>
+                  <option>Abuja</option>
+                </select></div>
+              <div class="field"><label data-i18n="date">DATE DE DÉPART</label><input type="date" id="date"></div>
+              <div class="field"><label data-i18n="passengers">VOYAGEURS</label><select id="passengers">
+                  <option>1 voyageur</option>
+                  <option>2 voyageurs</option>
+                  <option>3 voyageurs</option>
+                  <option>4 voyageurs</option>
+                  <option>5 voyageurs</option>
+                </select></div>
+              <button class="btn btn-orange search-submit" onclick="searchTrips()" data-i18n="search">Rechercher
+                ↗</button>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-top"><span data-i18n="myTickets">Mes billets</span><span class="stat-icon">▣</span></div>
+              <strong id="ticketCount">2</strong><small data-i18n="readyTravel">Prêts à voyager</small>
+            </div>
+            <div class="stat">
+              <div class="stat-top"><span data-i18n="saved">Économies</span><span class="stat-icon">✦</span></div>
+              <strong>8 500 <small>FCFA</small></strong><small data-i18n="partnerSavings">Grâce aux offres
+                partenaires</small>
+            </div>
+            <div class="stat">
+              <div class="stat-top"><span data-i18n="parcel">Colis</span><span class="stat-icon">▤</span></div>
+              <strong>1</strong><small data-i18n="inTransit">En cours d’acheminement</small>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="panel">
+              <div class="panel-title">
+                <h3 data-i18n="popularRoutes">Trajets populaires</h3><button class="text-link" onclick="go('book')"
+                  data-i18n="seeAll">Tout voir →</button>
+              </div>
+              <div class="route-card">
+                <div class="route-top"><strong>Abidjan <span style="color:#aaa">→</span> Yamoussoukro</strong><span>4
+                    500 FCFA</span></div>
+                <div class="route-sub">Aujourd’hui · 08:30 – 11:15 · 2 h 45</div>
+                <div class="route-line"><span>Abidjan</span>
+                  <div class="line"></div><span>Yamoussoukro</span>
+                </div>
+                <div class="route-bottom"><span class="seats">● <b>12 places</b> disponibles</span><button
+                    class="btn btn-light" onclick="bookRoute('Abidjan','Yamoussoukro','4 500 FCFA')">Choisir</button>
+                </div>
+              </div>
+              <div class="route-card">
+                <div class="route-top"><strong>Abidjan <span style="color:#aaa">→</span> Accra</strong><span>12 000
+                    FCFA</span></div>
+                <div class="route-sub">Demain · 07:00 – 13:30 · 6 h 30</div>
+                <div class="route-line"><span>Abidjan</span>
+                  <div class="line"></div><span>Accra</span>
+                </div>
+                <div class="route-bottom"><span class="seats">● <b>8 places</b> disponibles</span><button
+                    class="btn btn-light" onclick="bookRoute('Abidjan','Accra','12 000 FCFA')">Choisir</button></div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-title">
+                <h3 data-i18n="routeDeals">Vos avantages sur la route</h3><button class="text-link"
+                  onclick="go('deals')" data-i18n="explore">Explorer</button>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">🍽️</div>
+                <div><strong>Restaurant Le Baobab</strong>
+                  <p>À 300 m de votre prochain arrêt</p><span class="discount">−15 % sur votre repas</span>
+                </div>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">🏨</div>
+                <div><strong>Hôtel Soleil</strong>
+                  <p>Une pause confortable à Yamoussoukro</p><span class="discount">−10 % avec votre billet</span>
+                </div>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">⛽</div>
+                <div><strong>Station Énergie Plus</strong>
+                  <p>Partenaire certifié CI Voyage</p><span class="discount">Offre spéciale voyageurs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page" id="page-book">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">RÉSERVATION</div>
+              <h1>Réservez votre trajet</h1>
+              <p>Comparez les départs et choisissez votre place.</p>
+            </div><span class="pill">Paiement mobile disponible</span>
+          </div>
+          <div class="search-card">
+            <div class="search-grid">
+              <div class="field"><label>DÉPART</label><select id="bookFrom">
+                  <option>Abidjan</option>
+                  <option>Yamoussoukro</option>
+                  <option>Accra</option>
+                  <option>Lomé</option>
+                  <option>Cotonou</option>
+                  <option>Dakar</option>
+                  <option>Lagos</option>
+                  <option>Nairobi</option>
+                </select></div>
+              <div class="field"><label>DESTINATION</label><select id="bookTo">
+                  <option>Yamoussoukro</option>
+                  <option>Abidjan</option>
+                  <option>Accra</option>
+                  <option>Lomé</option>
+                  <option>Cotonou</option>
+                  <option>Dakar</option>
+                  <option>Lagos</option>
+                  <option>Nairobi</option>
+                </select></div>
+              <div class="field"><label>DATE</label><input type="date" id="bookDate"></div>
+              <div class="field"><label>VOYAGEURS</label><select>
+                  <option>1 voyageur</option>
+                  <option>2 voyageurs</option>
+                  <option>3 voyageurs</option>
+                </select></div>
+              <button class="btn btn-orange search-submit" onclick="searchTrips()">Rechercher ↗</button>
+            </div>
+          </div>
+          <div class="section-head">
+            <h2>Départs disponibles</h2><span id="searchResultLabel">3 options pour vous</span>
+          </div>
+          <div id="tripResults">
+            <div class="route-card">
+              <div class="route-top"><strong>UTB — Confort Plus</strong><span>4 500 FCFA</span></div>
+              <div class="route-sub">Départ 08:30 · Arrivée 11:15 · Climatisation · Wi-Fi</div>
+              <div class="route-line"><span>Abidjan</span>
+                <div class="line"></div><span>Yamoussoukro</span>
+              </div>
+              <div class="route-bottom"><span class="seats">12 places disponibles · <b>Note 4,8 ★</b></span><button
+                  class="btn btn-orange" onclick="startBooking('UTB — Confort Plus','4 500 FCFA')">Choisir un
+                  siège</button></div>
+            </div>
+            <div class="route-card">
+              <div class="route-top"><strong>AVS Transport — Express</strong><span>5 000 FCFA</span></div>
+              <div class="route-sub">Départ 10:00 · Arrivée 12:30 · Climatisation</div>
+              <div class="route-line"><span>Abidjan</span>
+                <div class="line"></div><span>Yamoussoukro</span>
+              </div>
+              <div class="route-bottom"><span class="seats">8 places disponibles · <b>Note 4,6 ★</b></span><button
+                  class="btn btn-orange" onclick="startBooking('AVS Transport — Express','5 000 FCFA')">Choisir un
+                  siège</button></div>
+            </div>
+            <div class="route-card">
+              <div class="route-top"><strong>TransIvoire — Économique</strong><span>3 500 FCFA</span></div>
+              <div class="route-sub">Départ 13:15 · Arrivée 16:00 · Bagage inclus</div>
+              <div class="route-line"><span>Abidjan</span>
+                <div class="line"></div><span>Yamoussoukro</span>
+              </div>
+              <div class="route-bottom"><span class="seats">15 places disponibles · <b>Note 4,4 ★</b></span><button
+                  class="btn btn-orange" onclick="startBooking('TransIvoire — Économique','3 500 FCFA')">Choisir un
+                  siège</button></div>
+            </div>
+          </div>
+          <div id="seatBooking" class="panel" style="display:none;margin-top:16px">
+            <div class="panel-title">
+              <h3>Choisissez votre siège</h3><span id="selectedBus">UTB</span>
+            </div>
+            <p style="font-size:11px;color:#777">Avant du bus ↑ · Les sièges gris sont déjà occupés.</p>
+            <div class="seat-map" id="seatMap"></div>
+            <div class="notice" id="seatNotice">Sélectionnez une place pour continuer.</div>
+            <div class="form-grid">
+              <div class="field"><label>NOM DU VOYAGEUR</label><input id="travelerName" value="Amina Diallo"></div>
+              <div class="field"><label>TÉLÉPHONE</label><input id="travelerPhone" placeholder="+225 07 00 00 00 00">
+              </div>
+            </div>
+            <div class="form-actions"><button class="btn btn-orange" onclick="openPayment()">Continuer vers le paiement
+                →</button><button class="btn btn-outline"
+                onclick="document.getElementById('seatBooking').style.display='none'">Annuler</button></div>
+          </div>
+        </section>
+        <section class="page" id="page-tickets">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">VOS VOYAGES</div>
+              <h1>Mes billets</h1>
+              <p>Vos billets numériques, disponibles même hors connexion.</p>
+            </div><span class="pill">✓ Billets vérifiables</span>
+          </div>
+          <div class="tabs"><button class="active">À venir</button><button
+              onclick="toast('Historique de démonstration affiché.')">Historique</button><button
+              onclick="toast('Mode hors connexion simulé : les billets enregistrés restent visibles.')">Mode hors
+              connexion ◉</button></div>
+          <div id="ticketList">
+            <div class="ticket" style="margin-bottom:14px">
+              <div class="ticket-head">
+                <div><strong>CI VOYAGE <span style="color:var(--orange)">/ Billet électronique</span></strong>
+                  <p style="margin:5px 0 0;font-size:10px;color:#888">Référence : CIV-2048-019</p>
+                </div>
+                <div class="qr" aria-label="QR code de démonstration"></div>
+              </div>
+              <div class="ticket-route">
+                <div><small>DÉPART · 08:30</small><strong>ABJ</strong>
+                  <div style="font-size:10px;color:#777">Abidjan</div>
+                </div><span style="color:var(--orange)">━━━━ ✈ ━━━━</span>
+                <div style="text-align:right"><small>ARRIVÉE · 11:15</small><strong>YAK</strong>
+                  <div style="font-size:10px;color:#777">Yamoussoukro</div>
+                </div>
+              </div>
+              <div class="ticket-info">
+                <div><span>VOYAGEUR</span><b>Amina Diallo</b></div>
+                <div><span>SIÈGE</span><b>08A · Fenêtre</b></div>
+                <div><span>DATE</span><b>24 oct. 2026</b></div>
+                <div><span>TRANSPORTEUR</span><b>UTB</b></div>
+                <div><span>PRIX</span><b>4 500 FCFA</b></div>
+                <div><span>STATUT</span><b class="badge">Payé</b></div>
+              </div>
+              <div class="form-actions"><button class="btn btn-orange"
+                  onclick="toast('Billet de démonstration enregistré sur cet appareil.')">↓ Enregistrer hors
+                  ligne</button><button class="btn btn-outline"
+                  onclick="toast('Lien de voyage prêt à partager avec votre famille.')">↗ Partager le
+                  trajet</button><button class="btn btn-outline"
+                  onclick="toast('QR de démonstration : CIV-2048-019 — validation simulée.')">Vérifier le
+                  billet</button></div>
+            </div>
+            <div class="panel">
+              <div class="panel-title">
+                <h3>Suivi en direct</h3><span class="badge orange">Simulation GPS</span>
+              </div>
+              <div
+                style="height:110px;border-radius:12px;background:linear-gradient(135deg,#f3f5ee,#e8eee2);display:grid;place-items:center;text-align:center;color:#3f6049">
+                <div style="font-size:27px">🚌　······📍</div>
+                <div style="font-size:11px;font-weight:800;margin-top:7px">Véhicule en route · Prochaine étape :
+                  Tiassalé</div>
+              </div>
+              <div class="route-bottom" style="margin-top:13px"><span class="seats">Dernière position reçue : il y a 2
+                  min</span><button class="btn btn-light"
+                  onclick="toast('Alerte de sécurité activée pour cette démonstration.')">Activer les alertes</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page" id="page-parcels">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">COLIS & BAGAGES</div>
+              <h1>Envoyez plus loin.</h1>
+              <p>Un réseau de livraison qui utilise les trajets de bus existants.</p>
+            </div><span class="pill">Suivi par SMS</span>
+          </div>
+          <div class="hero">
+            <h2>Votre colis voyage avec confiance.</h2>
+            <p>Réservez un envoi, remettez votre colis au point partenaire et suivez son parcours jusqu’à la réception.
+            </p><button class="btn btn-white"
+              onclick="document.getElementById('parcelForm').scrollIntoView({behavior:'smooth'})">＋ Créer un
+              envoi</button>
+          </div>
+          <div class="mini-cards">
+            <div class="mini-card"><span style="font-size:20px">📦</span>
+              <div class="big">CIV-7821</div>
+              <p>Colis en transit</p>
+            </div>
+            <div class="mini-card"><span style="font-size:20px">🚌</span>
+              <div class="big">ABJ → YAK</div>
+              <p>Trajet actuel</p>
+            </div>
+            <div class="mini-card"><span style="font-size:20px">✓</span>
+              <div class="big">Sécurisé</div>
+              <p>Code de remise requis</p>
+            </div>
+          </div>
+          <div class="section-head">
+            <h2>Créer un envoi</h2><span>Formulaire de démonstration</span>
+          </div>
+          <div class="form-card" id="parcelForm">
+            <div class="form-grid">
+              <div class="field"><label>VILLE DE DÉPART</label><select id="parcelFrom">
+                  <option>Abidjan</option>
+                  <option>Yamoussoukro</option>
+                  <option>Accra</option>
+                  <option>Lomé</option>
+                  <option>Cotonou</option>
+                </select></div>
+              <div class="field"><label>VILLE DE DESTINATION</label><select id="parcelTo">
+                  <option>Yamoussoukro</option>
+                  <option>Abidjan</option>
+                  <option>Accra</option>
+                  <option>Lomé</option>
+                  <option>Cotonou</option>
+                </select></div>
+              <div class="field"><label>NOM DU DESTINATAIRE</label><input id="recipient" placeholder="Nom complet">
+              </div>
+              <div class="field"><label>TÉLÉPHONE DU DESTINATAIRE</label><input id="recipientPhone"
+                  placeholder="+225 …"></div>
+              <div class="field"><label>TYPE DE COLIS</label><select id="parcelType">
+                  <option>Petit colis</option>
+                  <option>Document</option>
+                  <option>Bagage</option>
+                  <option>Colis volumineux</option>
+                </select></div>
+              <div class="field"><label>VALEUR DÉCLARÉE (FCFA)</label><input id="parcelValue" type="number"
+                  placeholder="Ex. 10000"></div>
+            </div>
+            <div class="form-actions"><button class="btn btn-orange" onclick="createParcel()">Calculer et réserver
+                l’envoi →</button></div>
+          </div>
+          <div class="section-head">
+            <h2>Suivre un colis</h2>
+          </div>
+          <div class="form-card">
+            <div class="form-grid">
+              <div class="field"><label>NUMÉRO DE SUIVI</label><input id="trackingId" value="CIV-7821"></div>
+              <div class="field"><label>TÉLÉPHONE ASSOCIÉ</label><input placeholder="+225 …"></div>
+            </div>
+            <div class="form-actions"><button class="btn btn-dark" onclick="trackParcel()">Suivre mon colis</button>
+            </div>
+            <div id="trackingResult" class="notice">CIV-7821 · Colis pris en charge → En transit vers Yamoussoukro →
+              Livraison prévue aujourd’hui. (Données simulées)</div>
+          </div>
+        </section>
+        <section class="page" id="page-deals">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">AVANTAGES VOYAGEURS</div>
+              <h1>La route vous récompense.</h1>
+              <p>Des offres locales utiles, accessibles avec votre billet CI Voyage.</p>
+            </div><span class="pill">Partenaires vérifiés</span>
+          </div>
+          <div class="search-card">
+            <div class="field"><label>FILTRER PAR CATÉGORIE</label><select id="dealFilter" onchange="filterDeals()">
+                <option value="all">Toutes les offres</option>
+                <option value="restaurant">Restaurants</option>
+                <option value="hotel">Hôtels</option>
+                <option value="clinic">Cliniques</option>
+                <option value="fuel">Stations-service</option>
+              </select></div>
+          </div>
+          <div class="two-col" style="margin-top:15px" id="dealList">
+            <div class="panel deal-item" data-category="restaurant">
+              <div class="offer">
+                <div class="offer-icon">🍲</div>
+                <div><strong>Restaurant Le Baobab</strong>
+                  <p>Yamoussoukro · À 300 m de la gare</p><span class="discount">−15 % sur votre repas</span>
+                  <p style="margin-top:8px">Présentez le QR de votre billet au comptoir.</p><button
+                    class="btn btn-light" onclick="redeem('Restaurant Le Baobab')">Voir l’offre</button>
+                </div>
+              </div>
+            </div>
+            <div class="panel deal-item" data-category="hotel">
+              <div class="offer">
+                <div class="offer-icon">🛏️</div>
+                <div><strong>Hôtel Soleil</strong>
+                  <p>Yamoussoukro · Hébergement</p><span class="discount">−10 % sur une nuitée</span>
+                  <p style="margin-top:8px">Offre valable sur présentation du billet.</p><button class="btn btn-light"
+                    onclick="redeem('Hôtel Soleil')">Voir l’offre</button>
+                </div>
+              </div>
+            </div>
+            <div class="panel deal-item" data-category="clinic">
+              <div class="offer">
+                <div class="offer-icon">🏥</div>
+                <div><strong>Clinique Espoir</strong>
+                  <p>Abidjan · Santé & bien-être</p><span class="discount">Consultation à tarif partenaire</span>
+                  <p style="margin-top:8px">Contactez le partenaire pour les conditions.</p><button
+                    class="btn btn-light" onclick="redeem('Clinique Espoir')">Voir l’offre</button>
+                </div>
+              </div>
+            </div>
+            <div class="panel deal-item" data-category="fuel">
+              <div class="offer">
+                <div class="offer-icon">⛽</div>
+                <div><strong>Énergie Plus</strong>
+                  <p>Corridor Abidjan–Yamoussoukro</p><span class="discount">Avantage carburant partenaire</span>
+                  <p style="margin-top:8px">Localisez les stations sur votre itinéraire.</p><button
+                    class="btn btn-light" onclick="redeem('Énergie Plus')">Voir l’offre</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="notice">Prototype : la validation réelle des remises par QR, les coordonnées GPS et les offres
+            contractuelles seront reliées aux comptes partenaires dans la version de production.</div>
+        </section>
+        <section class="page" id="page-company">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">PORTAIL B2B</div>
+              <h1>Espace transporteur</h1>
+              <p>Gérez vos véhicules, chauffeurs, trajets et revenus depuis un seul endroit.</p>
+            </div><span class="pill">Mode démonstration</span>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-top">Bus actifs <span class="stat-icon">🚌</span></div><strong>24 /
+                35</strong><small>Plan Silver simulé</small>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Billets vendus <span class="stat-icon">▣</span></div><strong>1 284</strong><small>Ce
+                mois-ci</small>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Revenu estimé <span class="stat-icon">↗</span></div><strong>8,4
+                M</strong><small>FCFA · Démonstration</small>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">
+              <h3>Gestion de la flotte</h3><button class="btn btn-orange"
+                onclick="toast('Formulaire d’ajout de bus ouvert en version de démonstration.')">＋ Ajouter un
+                bus</button>
+            </div>
+            <div class="tabs"><button class="active">Véhicules</button><button
+                onclick="toast('Module Chauffeurs : exemple de données de démonstration.')">Chauffeurs</button><button
+                onclick="toast('Module Itinéraires : exemple de données de démonstration.')">Itinéraires &
+                tarifs</button><button
+                onclick="toast('Module Partenaires : exemple de données de démonstration.')">Offres partenaires</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>VÉHICULE</th>
+                    <th>ITINÉRAIRE</th>
+                    <th>CHAUFFEUR</th>
+                    <th>STATUT GPS</th>
+                    <th>ÉTAT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CI-045-AB</td>
+                    <td>Abidjan → Yamoussoukro</td>
+                    <td>K. Traoré</td>
+                    <td><span class="badge">En direct</span></td>
+                    <td><span class="badge">Actif</span></td>
+                  </tr>
+                  <tr>
+                    <td>CI-118-CD</td>
+                    <td>Abidjan → Accra</td>
+                    <td>M. Koné</td>
+                    <td><span class="badge orange">Signal faible</span></td>
+                    <td><span class="badge">Actif</span></td>
+                  </tr>
+                  <tr>
+                    <td>CI-209-EF</td>
+                    <td>Abidjan → Bouaké</td>
+                    <td>A. Yao</td>
+                    <td><span class="badge">En direct</span></td>
+                    <td><span class="badge gray">Maintenance</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="section-head">
+            <h2>Choisissez votre abonnement</h2><span>Le paiement active l’inscription</span>
+          </div>
+          <div class="mini-cards">
+            <div class="mini-card"><span class="badge gray">BRONZE</span>
+              <div class="big">5 bus</div>
+              <p>Plan de démarrage · Tarif à définir</p><button class="btn btn-outline"
+                style="margin-top:12px;width:100%" onclick="choosePlan('Bronze','5 bus')">Sélectionner</button>
+            </div>
+            <div class="mini-card"><span class="badge orange">SILVER</span>
+              <div class="big">35 bus</div>
+              <p>Pour les flottes en croissance · Tarif à définir</p><button class="btn btn-orange"
+                style="margin-top:12px;width:100%" onclick="choosePlan('Silver','35 bus')">Sélectionner</button>
+            </div>
+            <div class="mini-card"><span class="badge">GOLD</span>
+              <div class="big">50 bus</div>
+              <p>Pour les grands réseaux · Tarif à définir</p><button class="btn btn-outline"
+                style="margin-top:12px;width:100%" onclick="choosePlan('Gold','50 bus')">Sélectionner</button>
+            </div>
+            <div class="mini-card"><span class="badge gray">PREMIUM</span>
+              <div class="big">Illimité</div>
+              <p>Flotte sans limite · Mensuel</p><button class="btn btn-outline" style="margin-top:12px;width:100%"
+                onclick="choosePlan('Premium','bus illimités')">Sélectionner</button>
+            </div>
+          </div>
+          <div class="notice">Les tarifs des abonnements sont volontairement indiqués « à définir » : le client doit
+            confirmer les prix, frais d’intégration et devise avant le lancement. Le verrouillage du compte jusqu’au
+            paiement est représenté dans le parcours, mais le paiement est simulé ici.</div>
+        </section>
+        <section class="page" id="page-partner">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">PORTAIL PARTENAIRES</div>
+              <h1>Devenez partenaire.</h1>
+              <p>Attirez des voyageurs, mettez vos offres en avant et mesurez vos résultats.</p>
+            </div><span class="pill">Restaurants · Hôtels · Santé · Stations</span>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-top">Vues de l’offre <span class="stat-icon">◉</span></div><strong>2
+                840</strong><small>Exemple ce mois</small>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Utilisations <span class="stat-icon">✓</span></div>
+              <strong>186</strong><small>Remises simulées</small>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Revenu attribué <span class="stat-icon">↗</span></div><strong>642
+                k</strong><small>FCFA · Estimation démo</small>
+            </div>
+          </div>
+          <div class="form-card">
+            <h3 style="margin-top:0">Créer votre fiche partenaire</h3>
+            <div class="form-grid">
+              <div class="field"><label>NOM DE L’ÉTABLISSEMENT</label><input id="partnerName"
+                  placeholder="Ex. Hôtel Soleil"></div>
+              <div class="field"><label>CATÉGORIE</label><select id="partnerCategory">
+                  <option>Restaurant</option>
+                  <option>Hôtel</option>
+                  <option>Clinique</option>
+                  <option>Station-service</option>
+                </select></div>
+              <div class="field"><label>VILLE</label><input placeholder="Votre ville"></div>
+              <div class="field"><label>TÉLÉPHONE</label><input placeholder="+225 …"></div>
+              <div class="field"><label>REMISE PROPOSÉE</label><input placeholder="Ex. 10 % sur les repas"></div>
+              <div class="field"><label>LOCALISATION GPS / ADRESSE</label><input
+                  placeholder="Adresse ou coordonnées GPS"></div>
+            </div>
+            <div class="form-actions"><button class="btn btn-orange" onclick="registerPartner()">Créer ma fiche
+                partenaire →</button></div>
+          </div>
+          <div class="section-head">
+            <h2>Abonnements partenaires</h2><span>Offres mensuelles</span>
+          </div>
+          <div class="mini-cards">
+            <div class="mini-card"><span class="badge gray">FREE</span>
+              <div class="big">Gratuit</div>
+              <p>Fiche établissement et visibilité de base.</p><button class="btn btn-outline"
+                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Free')">Commencer</button>
+            </div>
+            <div class="mini-card"><span class="badge orange">PRO</span>
+              <div class="big">À définir / mois</div>
+              <p>Meilleure visibilité et statistiques.</p><button class="btn btn-orange"
+                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Pro')">Choisir Pro</button>
+            </div>
+            <div class="mini-card"><span class="badge">ELITE</span>
+              <div class="big">À définir / mois</div>
+              <p>Visibilité premium et analyses avancées.</p><button class="btn btn-outline"
+                style="margin-top:12px;width:100%" onclick="choosePartnerPlan('Elite')">Choisir Elite</button>
+            </div>
+          </div>
+        </section>
+        <section class="page" id="page-help">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow">NOUS SOMMES LÀ</div>
+              <h1>Aide & accessibilité</h1>
+              <p>CI Voyage est pensé pour les connexions lentes et les usages mobiles.</p>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="panel">
+              <div class="panel-title">
+                <h3>Conçu pour l’Afrique</h3>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">📶</div>
+                <div><strong>Mode réseau faible</strong>
+                  <p>Interface légère, formulaires simples et billets enregistrables pour consultation hors connexion.
+                  </p>
+                </div>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">📱</div>
+                <div><strong>USSD · *123#</strong>
+                  <p>Parcours texte prévu pour les téléphones sans smartphone. Le service USSD nécessite un opérateur
+                    partenaire.</p>
+                </div>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">💬</div>
+                <div><strong>WhatsApp & SMS</strong>
+                  <p>Confirmation, rappels de départ et suivi de colis via des intégrations à connecter.</p>
+                </div>
+              </div>
+              <div class="offer">
+                <div class="offer-icon">🌍</div>
+                <div><strong>Langues africaines</strong>
+                  <p>Préparation multilingue : français, anglais, kiswahili, haoussa, yorùbá, amharique et portugais.
+                    D’autres langues pourront être ajoutées par pays.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-title">
+                <h3>Contacter l’assistance</h3>
+              </div>
+              <div class="form-grid">
+                <div class="field full"><label>VOTRE NOM</label><input id="helpName" placeholder="Nom complet"></div>
+                <div class="field full"><label>SUJET</label><select>
+                    <option>Réservation et paiement</option>
+                    <option>Billet ou QR code</option>
+                    <option>Colis et bagages</option>
+                    <option>Transporteur ou partenaire</option>
+                    <option>Autre demande</option>
+                  </select></div>
+                <div class="field full"><label>VOTRE MESSAGE</label><input id="helpMessage"
+                    placeholder="Comment pouvons-nous vous aider ?"></div>
+              </div>
+              <div class="form-actions"><button class="btn btn-orange"
+                  onclick="toast('Demande de démonstration enregistrée localement. Aucun message réel envoyé.')">Envoyer
+                  la demande</button></div>
+              <div class="notice">Cette démo ne transmet pas réellement les messages et n’effectue aucun paiement.</div>
+            </div>
+          </div>
+        </section>
+        <div class="footer-note">CI VOYAGE · Prototype interactif — données, paiements, GPS et QR simulés · © 2026</div>
+      </main>
+    </div>
+    <nav class="mobile-nav">
+      <button class="active" data-page="home" onclick="go('home',this)"><span>⌂</span><b
+          data-i18n="home">Accueil</b></button>
+      <button data-page="book" onclick="go('book',this)"><span>⌕</span><b data-i18n="bookShort">Réserver</b></button>
+      <button data-page="tickets" onclick="go('tickets',this)"><span>▣</span><b
+          data-i18n="ticketsShort">Billets</b></button>
+      <button data-page="parcels" onclick="go('parcels',this)"><span>▤</span><b
+          data-i18n="parcelsShort">Colis</b></button>
+      <button data-page="company" onclick="go('company',this)"><span>▦</span><b
+          data-i18n="businessShort">Pro</b></button>
+    </nav>
+  </div>
+  <div class="toast" id="toast"></div>
+  <div class="modal-backdrop" id="paymentModal" onclick="if(event.target===this)closePayment()">
+    <div class="modal"><button class="modal-close" onclick="closePayment()">✕</button>
+      <div class="eyebrow">PAIEMENT SÉCURISÉ</div>
+      <h2>Choisissez votre paiement</h2>
+      <p id="paymentSummary">Votre billet — prix de démonstration</p><label class="payment-option"><input type="radio"
+          name="payment" checked value="Mobile Money">📱 Mobile Money <span>Orange · MTN · Moov ·
+          Wave</span></label><label class="payment-option"><input type="radio" name="payment" value="Carte bancaire">💳
+        Carte bancaire <span>Visa · Mastercard</span></label><label class="payment-option"><input type="radio"
+          name="payment" value="Virement bancaire">🏦 Virement bancaire</label><label class="payment-option"><input
+          type="radio" name="payment" value="Portefeuille CI Voyage">👛 Portefeuille CI Voyage</label>
+      <div class="notice">Démo uniquement : aucun paiement réel ne sera débité.</div><button class="btn btn-orange"
+        style="width:100%" onclick="confirmPayment()">Confirmer la réservation ✓</button>
+    </div>
+  </div>
+  <script>
+    const i18n = {
+      fr: { passenger: "VOYAGEUR", home: "Accueil", book: "Réserver un trajet", tickets: "Mes billets", parcels: "Colis & bagages", deals: "Offres sur la route", ecosystem: "ÉCOSYSTÈME", company: "Espace transporteur", partner: "Espace partenaire", help: "Aide & accessibilité", welcome: "BONJOUR, AMINA 👋", headline: "Le voyage vous rapproche.", subheadline: "Voyagez, envoyez et découvrez l’Afrique autrement.", network: "Réseau de démonstration", heroTitle: "Une Afrique. Des milliers de destinations.", heroText: "Comparez les trajets, choisissez votre siège et payez avec votre moyen préféré. Votre voyage, dans votre poche.", findTrip: "⌕ Trouver un trajet", sendParcel: "＋ Envoyer un colis", searchTitle: "Où souhaitez-vous aller ?", searchCaption: "Simple • sûr • connecté", oneWay: "Aller simple", returnTrip: "Aller-retour", multiHop: "Multi-trajets", from: "DÉPART", to: "DESTINATION", date: "DATE DE DÉPART", passengers: "VOYAGEURS", search: "Rechercher ↗", myTickets: "Mes billets", readyTravel: "Prêts à voyager", saved: "Économies", partnerSavings: "Grâce aux offres partenaires", parcel: "Colis", inTransit: "En cours d’acheminement", popularRoutes: "Trajets populaires", seeAll: "Tout voir →", routeDeals: "Vos avantages sur la route", explore: "Explorer", bookShort: "Réserver", ticketsShort: "Billets", parcelsShort: "Colis", businessShort: "Pro" },
+      en: { passenger: "TRAVELLER", home: "Home", book: "Book a trip", tickets: "My tickets", parcels: "Parcels & luggage", deals: "Offers on the route", ecosystem: "ECOSYSTEM", company: "Bus operator", partner: "Partner portal", help: "Help & accessibility", welcome: "HELLO, AMINA 👋", headline: "Every journey brings us closer.", subheadline: "Travel, send parcels and discover Africa differently.", network: "Demo network", heroTitle: "One Africa. Thousands of destinations.", heroText: "Compare routes, choose your seat and pay your way. Your journey, in your pocket.", findTrip: "⌕ Find a trip", sendParcel: "＋ Send a parcel", searchTitle: "Where would you like to go?", searchCaption: "Simple • safe • connected", oneWay: "One way", returnTrip: "Return", multiHop: "Multi-stop", from: "FROM", to: "DESTINATION", date: "DEPARTURE DATE", passengers: "PASSENGERS", search: "Search ↗", myTickets: "My tickets", readyTravel: "Ready to travel", saved: "Savings", partnerSavings: "Through partner offers", parcel: "Parcels", inTransit: "In transit", popularRoutes: "Popular routes", seeAll: "View all →", routeDeals: "Your route benefits", explore: "Explore", bookShort: "Book", ticketsShort: "Tickets", parcelsShort: "Parcels", businessShort: "Business" },
+      sw: { passenger: "MSAFIRI", home: "Nyumbani", book: "Weka nafasi", tickets: "Tiketi zangu", parcels: "Vifurushi na mizigo", deals: "Ofa njiani", ecosystem: "MTANDAO", company: "Kampuni ya mabasi", partner: "Washirika", help: "Msaada na ufikivu", welcome: "KARIBU, AMINA 👋", headline: "Kila safari hutuleta karibu.", subheadline: "Safiri, tuma vifurushi na ugundue Afrika.", network: "Mtandao wa majaribio", heroTitle: "Afrika moja. Maeneo mengi.", heroText: "Linganisha safari, chagua kiti na ulipe kwa njia unayopendelea.", findTrip: "⌕ Tafuta safari", sendParcel: "＋ Tuma kifurushi", searchTitle: "Ungependa kwenda wapi?", searchCaption: "Rahisi • salama • imeunganishwa", oneWay: "Kwenda", returnTrip: "Kwenda na kurudi", multiHop: "Safari nyingi", from: "KUTOKA", to: "KWENDA", date: "TAREHE YA SAFARI", passengers: "ABIRIA", search: "Tafuta ↗", myTickets: "Tiketi zangu", readyTravel: "Tayari kusafiri", saved: "Akiba", partnerSavings: "Kupitia ofa za washirika", parcel: "Vifurushi", inTransit: "Njiani", popularRoutes: "Safari maarufu", seeAll: "Ona zote →", routeDeals: "Faida zako njiani", explore: "Gundua", bookShort: "Weka nafasi", ticketsShort: "Tiketi", parcelsShort: "Vifurushi", businessShort: "Biashara" },
+      ha: { passenger: "MATAFI", home: "Gida", book: "Yi ajiyar tafiya", tickets: "Tikiti na", parcels: "Kaya da kaya", deals: "Kyaututtuka a hanya", ecosystem: "TSARIN HAƊIN GWIWA", company: "Kamfanin mota", partner: "Abokan hulɗa", help: "Taimako da sauƙin amfani", welcome: "SANNUN KI, AMINA 👋", headline: "Tafiya tana haɗa mu.", subheadline: "Yi tafiya, aika kaya, gano Afirka.", network: "Gwajin dandali", heroTitle: "Afirka ɗaya. Wurare dubbai.", heroText: "Kwatanta hanyoyi, zaɓi kujera, biya yadda kike so.", findTrip: "⌕ Nemo tafiya", sendParcel: "＋ Aika kaya", searchTitle: "Ina kike son zuwa?", searchCaption: "Sauƙi • aminci • haɗin kai", oneWay: "Tafiya ɗaya", returnTrip: "Komawa", multiHop: "Hanyoyi da yawa", from: "DAGA", to: "ZUWA", date: "RANAR TAFIYA", passengers: "FASINJOJI", search: "Nema ↗", myTickets: "Tikiti na", readyTravel: "A shirye", saved: "Ajiyar kuɗi", partnerSavings: "Ta tayin abokan hulɗa", parcel: "Kaya", inTransit: "A hanya", popularRoutes: "Shahararrun hanyoyi", seeAll: "Duba duka →", routeDeals: "Fa'idodi a hanya", explore: "Bincika", bookShort: "Ajiya", ticketsShort: "Tikiti", parcelsShort: "Kaya", businessShort: "Kasuwanci" },
+      yo: { passenger: "ARÌNRÌN", home: "Ilé", book: "Fowo sí ìrìnàjò", tickets: "Àwọn tikẹ́ẹ̀tì mi", parcels: "Ẹrù àti àpò", deals: "Àwọn àǹfààní ọ̀nà", ecosystem: "ÈTÒ ÌṢẸ́", company: "Ilé iṣẹ́ ọkọ̀", partner: "Àwọn alábáṣiṣẹ́pọ̀", help: "Ìrànlọ́wọ́ àti ìrọ̀rùn", welcome: "Ẹ KÁÀBỌ̀, AMINA 👋", headline: "Ìrìnàjò so wá pọ̀.", subheadline: "Rìnrìnàjò, fi ẹrù ránṣẹ́, kí o sì ṣàwárí Áfíríkà.", network: "Nẹ́tíwọ́ọ̀kì ìdánwò", heroTitle: "Áfíríkà kan. Ẹgbẹẹgbẹ̀rún ibi.", heroText: "Fi àwọn ọ̀nà wé ara wọn, yan ìjókòó, kí o sì sanwó bí o ṣe fẹ́.", findTrip: "⌕ Wá ìrìnàjò", sendParcel: "＋ Fi ẹrù ránṣẹ́", searchTitle: "Ibo ni o fẹ́ lọ?", searchCaption: "Rọrùn • ààbò • ìsopọ̀", oneWay: "Ọ̀nà kan", returnTrip: "Padà", multiHop: "Ọ̀pọ̀ ọ̀nà", from: "LÁTI", to: "SÍ", date: "ỌJỌ́ ÌRÌNÀJÒ", passengers: "ÀWỌN ARÌNRÌN", search: "Wá ↗", myTickets: "Tikẹ́ẹ̀tì mi", readyTravel: "Ṣetán láti lọ", saved: "Ìfipamọ́", partnerSavings: "Nípasẹ̀ àwọn àǹfààní", parcel: "Ẹrù", inTransit: "Lọ́wọ́ ọ̀nà", popularRoutes: "Àwọn ọ̀nà tó gbajúmọ̀", seeAll: "Wo gbogbo rẹ̀ →", routeDeals: "Àǹfààní rẹ ní ọ̀nà", explore: "Ṣàwárí", bookShort: "Fowo sí", ticketsShort: "Tikẹ́ẹ̀tì", parcelsShort: "Ẹrù", businessShort: "Iṣẹ́" },
+      am: { passenger: "ተጓዥ", home: "መነሻ", book: "ጉዞ ይያዙ", tickets: "ትኬቶቼ", parcels: "እቃዎች", deals: "የመንገድ ቅናሾች", ecosystem: "አገልግሎቶች", company: "የአውቶቡስ ኩባንያ", partner: "አጋሮች", help: "እገዛ", welcome: "እንኳን ደህና መጡ, AMINA 👋", headline: "ጉዞ ያቀራርበናል።", subheadline: "ተጓዙ፣ እቃ ላኩ፣ አፍሪካን በአዲስ መንገድ ያግኙ።", network: "የሙከራ አውታረ መረብ", heroTitle: "አንድ አፍሪካ። ብዙ መዳረሻዎች።", heroText: "መንገዶችን ያወዳድሩ፣ መቀመጫ ይምረጡ እና በሚፈልጉት መንገድ ይክፈሉ።", findTrip: "⌕ ጉዞ ፈልግ", sendParcel: "＋ እቃ ላክ", searchTitle: "ወዴት መሄድ ይፈልጋሉ?", searchCaption: "ቀላል • ደህንነቱ የተጠበቀ • የተገናኘ", oneWay: "አንድ መንገድ", returnTrip: "መመለስ", multiHop: "ብዙ መንገዶች", from: "ከ", to: "ወደ", date: "የጉዞ ቀን", passengers: "ተጓዦች", search: "ፈልግ ↗", myTickets: "ትኬቶቼ", readyTravel: "ለጉዞ ዝግጁ", saved: "ቁጠባ", partnerSavings: "በአጋር ቅናሾች", parcel: "እቃዎች", inTransit: "በጉዞ ላይ", popularRoutes: "ታዋቂ መንገዶች", seeAll: "ሁሉንም ይመልከቱ →", routeDeals: "የመንገድ ጥቅሞች", explore: "ይመልከቱ", bookShort: "ያዙ", ticketsShort: "ትኬቶች", parcelsShort: "እቃዎች", businessShort: "ንግድ" },
+      pt: { passenger: "PASSAGEIRO", home: "Início", book: "Reservar viagem", tickets: "Os meus bilhetes", parcels: "Encomendas e bagagem", deals: "Ofertas no percurso", ecosystem: "ECOSSISTEMA", company: "Operadora de autocarros", partner: "Portal de parceiros", help: "Ajuda e acessibilidade", welcome: "OLÁ, AMINA 👋", headline: "A viagem aproxima-nos.", subheadline: "Viaje, envie encomendas e descubra África de outra forma.", network: "Rede de demonstração", heroTitle: "Uma África. Milhares de destinos.", heroText: "Compare rotas, escolha o seu lugar e pague como preferir.", findTrip: "⌕ Encontrar viagem", sendParcel: "＋ Enviar encomenda", searchTitle: "Para onde deseja ir?", searchCaption: "Simples • seguro • conectado", oneWay: "Só ida", returnTrip: "Ida e volta", multiHop: "Várias etapas", from: "PARTIDA", to: "DESTINO", date: "DATA DE PARTIDA", passengers: "PASSAGEIROS", search: "Pesquisar ↗", myTickets: "Os meus bilhetes", readyTravel: "Prontos para viajar", saved: "Poupanças", partnerSavings: "Com ofertas dos parceiros", parcel: "Encomendas", inTransit: "Em trânsito", popularRoutes: "Rotas populares", seeAll: "Ver tudo →", routeDeals: "Vantagens no percurso", explore: "Explorar", bookShort: "Reservar", ticketsShort: "Bilhetes", parcelsShort: "Encomendas", businessShort: "Empresa" }
+    };
+    let currentBus = "UTB — Confort Plus", currentPrice = "4 500 FCFA", selectedSeat = null, bookingCount = 2, activeRouteFrom = "Abidjan", activeRouteTo = "Yamoussoukro";
+    function go(page, el) { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); const target = document.getElementById('page-' + page); if (target) target.classList.add('active'); document.querySelectorAll('.nav,.mobile-nav button').forEach(b => b.classList.toggle('active', b.dataset.page === page)); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => t.classList.remove('show'), 3300) }
+    function setTripType(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active')); btn.classList.add('active'); if (btn.textContent.includes('Multi')) toast('Mode multi-trajets sélectionné — ajout des étapes disponible dans la version complète.') }
+    function searchTrips() { const f = document.getElementById('from')?.value || document.getElementById('bookFrom')?.value || 'Abidjan'; const t = document.getElementById('to')?.value || document.getElementById('bookTo')?.value || 'Yamoussoukro'; if (f === t) { toast('Choisissez deux villes différentes.'); return } activeRouteFrom = f; activeRouteTo = t; document.getElementById('bookFrom').value = f; document.getElementById('bookTo').value = t; document.querySelectorAll('#tripResults .route-card').forEach((card, i) => { const names = card.querySelector('.route-line'); if (names) { names.innerHTML = '<span>' + f + '</span><div class="line"></div><span>' + t + '</span>' } }); document.getElementById('searchResultLabel').textContent = '3 options · ' + f + ' → ' + t; go('book'); toast('Trajets de démonstration affichés pour ' + f + ' → ' + t + '.') }
+    function bookRoute(f, t, p) { activeRouteFrom = f; activeRouteTo = t; document.getElementById('bookFrom').value = f; document.getElementById('bookTo').value = t; go('book'); toast('Choisissez un départ pour continuer.') }
+    function startBooking(bus, price) { currentBus = bus; currentPrice = price; selectedSeat = null; document.getElementById('selectedBus').textContent = bus; const map = document.getElementById('seatMap'); map.innerHTML = ''; for (let i = 1; i <= 20; i++) { if (i % 4 === 3) { const aisle = document.createElement('div'); aisle.className = 'seat aisle'; map.appendChild(aisle) } const n = String(i).padStart(2, '0'); const b = document.createElement('button'); b.className = 'seat' + ([3, 7, 14, 18].includes(i) ? ' taken' : ''); b.textContent = n + (i % 2 ? 'A' : 'B'); if (!b.classList.contains('taken')) b.onclick = () => { map.querySelectorAll('.seat').forEach(s => s.classList.remove('selected')); b.classList.add('selected'); selectedSeat = b.textContent; document.getElementById('seatNotice').textContent = 'Siège sélectionné : ' + selectedSeat + ' · ' + currentPrice }; map.appendChild(b) } document.getElementById('seatBooking').style.display = 'block'; document.getElementById('seatBooking').scrollIntoView({ behavior: 'smooth', block: 'start' }) }
+    function openPayment() { if (!selectedSeat) { toast('Veuillez choisir un siège avant de continuer.'); return } if (!document.getElementById('travelerName').value.trim()) { toast('Veuillez saisir le nom du voyageur.'); return } document.getElementById('paymentSummary').textContent = currentBus + ' · ' + activeRouteFrom + ' → ' + activeRouteTo + ' · Siège ' + selectedSeat + ' · ' + currentPrice; document.getElementById('paymentModal').classList.add('show') }
+    function closePayment() { document.getElementById('paymentModal').classList.remove('show') }
+    function confirmPayment() { closePayment(); bookingCount++; document.getElementById('ticketCount').textContent = bookingCount; const method = document.querySelector('input[name="payment"]:checked').value; const name = document.getElementById('travelerName').value || 'Voyageur'; const card = document.createElement('div'); card.className = 'ticket'; card.style.marginBottom = '14px'; card.innerHTML = '<div class="ticket-head"><div><strong>CI VOYAGE <span style="color:var(--orange)">/ Billet démo</span></strong><p style="margin:5px 0 0;font-size:10px;color:#888">Référence : CIV-' + Math.floor(1000 + Math.random() * 8999) + '-DEMO</p></div><div class="qr"></div></div><div class="ticket-route"><div><small>DÉPART</small><strong>' + activeRouteFrom + '</strong></div><span style="color:var(--orange)">━━━━ 🚌 ━━━━</span><div style="text-align:right"><small>ARRIVÉE</small><strong>' + activeRouteTo + '</strong></div></div><div class="ticket-info"><div><span>VOYAGEUR</span><b>' + name + '</b></div><div><span>SIÈGE</span><b>' + selectedSeat + '</b></div><div><span>TRANSPORTEUR</span><b>' + currentBus + '</b></div><div><span>PRIX</span><b>' + currentPrice + '</b></div><div><span>PAIEMENT</span><b>' + method + '</b></div><div><span>STATUT DÉMO</span><b class="badge orange">Simulé</b></div></div><div class="notice">Réservation de démonstration uniquement : aucun billet réel émis, aucun paiement encaissé.</div>'; document.getElementById('ticketList').prepend(card); go('tickets'); toast('Parcours de réservation terminé en mode démo. Aucun paiement réel effectué.') }
+    function createParcel() { const r = document.getElementById('recipient').value.trim(); const phone = document.getElementById('recipientPhone').value.trim(); if (!r || !phone) { toast('Veuillez saisir le nom et le téléphone du destinataire.'); return } const id = 'CIV-' + Math.floor(1000 + Math.random() * 8999); document.getElementById('trackingId').value = id; document.getElementById('trackingResult').textContent = id + ' · Demande créée · ' + document.getElementById('parcelFrom').value + ' → ' + document.getElementById('parcelTo').value + ' · ' + document.getElementById('parcelType').value + '. Statut simulé : en attente de dépôt.'; toast('Envoi créé en mode démonstration : ' + id); document.getElementById('trackingResult').scrollIntoView({ behavior: 'smooth', block: 'center' }) }
+    function trackParcel() { const id = document.getElementById('trackingId').value.trim(); document.getElementById('trackingResult').textContent = id + ' · Pris en charge → En transit → Livraison prévue. Statuts et notifications simulés pour la démonstration.'; toast('Résultat de suivi de démonstration affiché.') }
+    function filterDeals() { const v = document.getElementById('dealFilter').value; document.querySelectorAll('.deal-item').forEach(el => el.style.display = (v === 'all' || el.dataset.category === v) ? 'block' : 'none') }
+    function redeem(name) { toast('Offre sélectionnée : ' + name + '. En production, le QR du billet validera la remise.') }
+    function choosePlan(plan, capacity) { toast('Plan ' + plan + ' sélectionné (' + capacity + '). Le paiement et l’activation seront connectés en production.'); document.getElementById('paymentSummary').textContent = 'Abonnement transporteur ' + plan + ' — prix à définir'; document.getElementById('paymentModal').classList.add('show') }
+    function choosePartnerPlan(plan) { toast('Plan partenaire ' + plan + ' sélectionné. Les tarifs doivent être confirmés par CI Voyage.') }
+    function registerPartner() { const n = document.getElementById('partnerName').value.trim(); if (!n) { toast('Veuillez saisir le nom de votre établissement.'); return } toast('Fiche de démonstration créée pour ' + n + '. Aucune donnée envoyée au serveur.') }
+    function changeLanguage() { const lang = document.getElementById('language').value; const dict = i18n[lang] || i18n.fr; document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (dict[key]) el.textContent = dict[key] }); document.documentElement.lang = lang; toast('Langue de l’interface : ' + document.getElementById('language').selectedOptions[0].textContent + '. Certains contenus restent en français dans cette démo.') }
+    document.addEventListener('DOMContentLoaded', () => { const d = new Date(); d.setDate(d.getDate() + 1); const iso = d.toISOString().slice(0, 10); document.getElementById('date').value = iso; document.getElementById('bookDate').value = iso; document.getElementById('date').min = new Date().toISOString().slice(0, 10); document.getElementById('bookDate').min = new Date().toISOString().slice(0, 10) });
+  </script>
+</body>
+
+</html>
